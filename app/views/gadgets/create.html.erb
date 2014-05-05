@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Adding Gadget </title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="nav navbar-header">
+    <a href="/admins/contact" class="navbar-brand">Contact</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">German</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+
+      <li><a href="/users/signin" data-method="delete" rel="nofollow">Sign Out</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav> <br><br><br>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 sidebar-padding">
+            <div class="list-group">
+    <a href="/admins/index" class="list-group-item">Current Users</a>
+  <a href="/roles/new" class="list-group-item">User Roles</a>
+
+  <a href="/gadgets/new" class="list-group-item active">Gadget Inventory</a>
+
+
+</div>
+
+ 
+  
+        
+        
+        
+        
+        
+        
+        
+       
+          </div>
+          <div class="col-md-10">
+            <div class="row">
+  <div class="col-md-12">
+    <p>
+      <div class="well">
+        
+        <form accept-charset="UTF-8" action="/qualityinventory?method=post" class="form-horizontal" enctype="multipart/form-data" id="new_qualityinventory" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="1RpCnc4nA21gkjynaBNs7HIdTsMFOxARA6H4jKQpV64=" /></div>
+  <div class="container">
+    <div class="col-lg-10">
+      <div class="row">
+        <div class="form-group">      
+          <div class="col-md-9">
+            <input class="form-control input-md" id="qualityinventory_title" name="qualityinventory[title]" placeholder="Enter title here" required="required" size="30" type="text" />
+          </div>
+        <div class="col-md-3"> 
+          <a href="/qualityinventory" class="btn btn-primary">Back</a>
+            <input class="btn btn-primary" name="commit" type="submit" value="Save" />
+          </div>
+        </div>
+      </div>
+      <hr/>
+  <!-- col-lg-9 close  -->
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Name of the method/gadget</label>  
+          <div class="col-md-7">
+            <input class="form-control input-md" id="qualityinventory_methodorgadget" name="qualityinventory[methodorgadget]" required="required" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">What is it for?</label>  
+          <div class="col-md-7">
+            <input class="form-control input-md" id="qualityinventory_usefulfor" name="qualityinventory[usefulfor]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Analysis group(s)</label>
+            <div class="col-md-7" style="padding-top:13px">
+
+              
+                        <input id="qualityinventory_analysisgroup_16" name="qualityinventory[analysisgroup][]" type="checkbox" value="16" />
+                        Urin  
+                      
+
+                        <input id="qualityinventory_analysisgroup_17" name="qualityinventory[analysisgroup][]" type="checkbox" value="17" />
+                        Blood  
+                      
+
+                        <input id="qualityinventory_analysisgroup_18" name="qualityinventory[analysisgroup][]" type="checkbox" value="18" />
+                        Skin  
+                      
+
+                        <input id="qualityinventory_analysisgroup_19" name="qualityinventory[analysisgroup][]" type="checkbox" value="19" />
+                        Faeces  
+                      
+
+                        <input id="qualityinventory_analysisgroup_20" name="qualityinventory[analysisgroup][]" type="checkbox" value="20" />
+                        Breath  
+                      
+
+                        <input id="qualityinventory_analysisgroup_21" name="qualityinventory[analysisgroup][]" type="checkbox" value="21" />
+                        Activity  
+                      
+
+                        <input id="qualityinventory_analysisgroup_22" name="qualityinventory[analysisgroup][]" type="checkbox" value="22" />
+                        Sleep  
+                      
+
+                        <input id="qualityinventory_analysisgroup_23" name="qualityinventory[analysisgroup][]" type="checkbox" value="23" />
+                        Food intake  
+                      
+
+                        <input id="qualityinventory_analysisgroup_24" name="qualityinventory[analysisgroup][]" type="checkbox" value="24" />
+                        Others  
+                      
+
+
+          
+
+
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Specific parameters</label> 
+          <div class="col-md-8">
+                    <p>
+            <a href="javascript:void(0)" class="btn btn-default add_nested_fields" data-association="specificparameters" data-blueprint-id="specificparameters_fields_blueprint"><span class="glyphicon glyphicon-plus" id="button"></a>
+          </p>
+        </div> 
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Type of method/gadget</label>
+            <div class="col-md-7" style="padding-top:13px">
+                        <input id="qualityinventory_typeofmethod_1" name="qualityinventory[typeofmethod][]" type="checkbox" value="1" />
+                        Non-invasive  
+                        <input id="qualityinventory_typeofmethod_2" name="qualityinventory[typeofmethod][]" type="checkbox" value="2" />
+                        Minimally-invasive  
+                        <input id="qualityinventory_typeofmethod_3" name="qualityinventory[typeofmethod][]" type="checkbox" value="3" />
+                        Invasive  
+              </div>
+        </div>
+      </div>
+    <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Short description of gadget</label>
+          <div class="col-md-7"> 
+            <textarea class="form-control" cols="40" id="qualityinventory_gadgetdescription" name="qualityinventory[gadgetdescription]" rows="4">
+</textarea>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="buttondropdown">Cost</label>
+          <div class="col-md-5">
+            <input class="form-control" id="qualityinventory_cost" name="qualityinventory[cost]" size="30" type="text" />
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" id="currency_select" name="qualityinventory[currency_id]"><option value="1">Euros</option>
+<option value="2">Dollars</option>
+<option value="3">Yens</option>
+<option value="4">Dinars</option>
+<option value="5">Pounds</option></select>
+
+          </div>  
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="radios">Is the tool available to users?</label>
+            <div class="col-md-8"> 
+              <label class="radio-inline" for="radios-0">
+                <input id="qualityinventory_tooltousers_yes" name="qualityinventory[tooltousers]" type="radio" value="Yes" />
+              Yes
+              </label> 
+              <label class="radio-inline" for="radios-1">
+                <input id="qualityinventory_tooltousers_no" name="qualityinventory[tooltousers]" type="radio" value="No" />
+                No
+              </label> 
+        </div>
+      </div>
+
+      <br>
+        <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Gadget website</label>
+          <div class="col-md-7"> 
+            <input class="form-control" id="qualityinventory_gadgetwebsite" name="qualityinventory[gadgetwebsite]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Brochure</label>
+          <div class="col-md-7"> 
+            <input class="form-control" id="qualityinventory_brochure" name="qualityinventory[brochure]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+    <hr/>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Company name</label>  
+          <div class="col-md-7">
+            <input class="form-control input-md" id="qualityinventory_companyname" name="qualityinventory[companyname]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Company description</label>  
+          <div class="col-md-7">
+            <textarea class="form-control input-md" cols="40" id="qualityinventory_companydescription" name="qualityinventory[companydescription]" rows="4">
+</textarea>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">     
+        <div class="form-group">
+         <label class="col-md-4 control-label">Company website</label>  
+          <div class="col-md-7">
+            <input class="form-control input-md" id="qualityinventory_companywebsite" name="qualityinventory[companywebsite]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Scientific Advisers/institutes</label> 
+          <div class="col-md-8">
+                    <p>
+            <a href="javascript:void(0)" class="btn btn-default add_nested_fields" data-association="advisaryinstitutes" data-blueprint-id="advisaryinstitutes_fields_blueprint"><span class="glyphicon glyphicon-plus" id="button"></a>
+          </p>
+        </div> 
+      </div>
+    </div>
+    <br>
+    <hr/>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Technology used</label>  
+          <div class="col-md-7">
+            <input class="form-control input-md" id="qualityinventory_techologyused" name="qualityinventory[techologyused]" size="30" type="text" />
+          </div>
+        </div>
+      </div>
+        <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Scientific description of</label>  
+          <div class="col-md-7">
+            <textarea class="form-control input-md" cols="40" id="qualityinventory_scientficdescription" name="qualityinventory[scientficdescription]" rows="4">
+</textarea>
+          </div>
+        </div>
+        <br>
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Available scientific papers</label> 
+          <div class="col-md-8">
+                        <p>
+              <a href="javascript:void(0)" class="btn btn-default add_nested_fields" data-association="scientificpapers" data-blueprint-id="scientificpapers_fields_blueprint"><span class="glyphicon glyphicon-plus" id="button"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr/>
+        <div class="row">
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="radios">Usefulness for field</label>
+            <div class="col-md-8"> 
+              <label class="radio-inline" for="radios-0">
+                <input id="qualityinventory_usefullnessforfield_nrc_yes" name="qualityinventory[usefullnessforfield_nrc]" type="radio" value="Yes" />
+              Yes
+              </label> 
+              <label class="radio-inline" for="radios-1">
+                <input id="qualityinventory_usefullnessforfield_nrc_no" name="qualityinventory[usefullnessforfield_nrc]" type="radio" value="No" />
+                No
+              </label> 
+              <label class="radio-inline" for="radios-2">
+               <input id="qualityinventory_usefullnessforfield_nrc_maybe" name="qualityinventory[usefullnessforfield_nrc]" type="radio" value="Maybe" />
+                May be
+              </label>
+              <label class="radio-inline">
+                 <input name="qualityinventory[evaluation_by_nrc]" type="hidden" value="0" /><input id="qualityinventory_evaluation_by_nrc" name="qualityinventory[evaluation_by_nrc]" type="checkbox" value="1" /> 
+                    Evaluated by NRC
+              </label>
+            </div>
+          </div>
+          <br>
+            <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">QuaLiFY area of interest</label>
+            <div class="col-md-7" style="padding-top:13px">
+                        <input id="qualityinventory_qualifyareasofinterest_1" name="qualityinventory[qualifyareasofinterest][]" type="checkbox" value="1" />
+                        Dietary assessment  
+                        <input id="qualityinventory_qualifyareasofinterest_2" name="qualityinventory[qualifyareasofinterest][]" type="checkbox" value="2" />
+                        Health status  
+                        <input id="qualityinventory_qualifyareasofinterest_3" name="qualityinventory[qualifyareasofinterest][]" type="checkbox" value="3" />
+                        Physical activity  
+                        <input id="qualityinventory_qualifyareasofinterest_4" name="qualityinventory[qualifyareasofinterest][]" type="checkbox" value="4" />
+                        Fitness performance &amp; genotype  
+              </div>
+        </div>
+      </div>
+
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Useful for which field lab? </label>  
+              <div class="col-md-7">
+                <select class="form-control" name="qualityinventory[field2usefullforwhich_id]"><option value="1">NONE</option>
+<option value="2">Obese children</option>
+<option value="3">Children w. eating disorders</option>
+<option value="4">Diabetic adults</option></select>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Explanation by evaluator(NRC)</label>
+                <div class="col-md-7"> 
+                  <textarea class="form-control input-md" cols="40" id="qualityinventory_field2explanation" name="qualityinventory[field2explanation]" rows="4">
+</textarea>
+                </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr/>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Name of evaluator(NRC)</label>  
+              <div class="col-md-7">
+                  <input class="form-control input-md" id="fieldwidth" name="qualityinventory[name]" size="30" type="text" />
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Comments/suggestion of evaluator</label>  
+              <div class="col-md-7">
+                  <textarea class="form-control input-md" cols="40" id="fieldwidth" name="qualityinventory[comment]" rows="4">
+</textarea>
+              </div>
+            </div>  
+          </div>
+          <div class="text-center"> 
+            <a href="/qualityinventory" class="btn btn-primary">Back</a>
+            <input class="btn btn-primary" name="commit" type="submit" value="Save" />
+          </div>
+        </div>
+      </div> 
+      </div>
+      <div class="col-lg-3">
+        
+        Upload picture
+
+          <p>
+          <img alt="Avatar" height="100" id="imag" src="/assets/avatar-8d39f037dde6d86c2ea094bc6bc8176e.png" width="100" />
+          </p> 
+          
+          <p><input id="file_input_img" name="qualityinventory[avatar]" onchange="readImageURL(this);" type="file" />
+          
+          </p>
+          <br/>
+
+      </div>
+      <div class="col-lg-4" >
+        
+        Add video url
+        <input class="form-control" id="qualityinventory_videolocation" name="qualityinventory[videolocation]" size="30" type="text" />
+        <!-- <p></p>
+         -->
+      </div>
+<div data-blueprint="&lt;div class=&quot;fields&quot;&gt;
+          &lt;p&gt;
+          &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-9&quot;&gt;
+              &lt;input class=&quot;form-control input-md&quot; id=&quot;qualityinventory_specificparameters_attributes_new_specificparameters_name&quot; name=&quot;qualityinventory[specificparameters_attributes][new_specificparameters][name]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;
+            &lt;/div&gt;
+              &lt;input id=&quot;qualityinventory_specificparameters_attributes_new_specificparameters__destroy&quot; name=&quot;qualityinventory[specificparameters_attributes][new_specificparameters][_destroy]&quot; type=&quot;hidden&quot; value=&quot;false&quot; /&gt;&lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn btn-default remove_nested_fields&quot; data-association=&quot;specificparameters&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-minus&quot; id=&quot;button&quot;&gt;&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;/p&gt;
+&lt;/div&gt;" id="specificparameters_fields_blueprint" style="display: none"></div> <div data-blueprint="&lt;div class=&quot;fields&quot;&gt;
+          &lt;p&gt;
+          &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-9&quot;&gt;
+              &lt;input class=&quot;form-control input-md&quot; id=&quot;qualityinventory_advisaryinstitutes_attributes_new_advisaryinstitutes_name&quot; name=&quot;qualityinventory[advisaryinstitutes_attributes][new_advisaryinstitutes][name]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;
+            &lt;/div&gt;
+              &lt;input id=&quot;qualityinventory_advisaryinstitutes_attributes_new_advisaryinstitutes__destroy&quot; name=&quot;qualityinventory[advisaryinstitutes_attributes][new_advisaryinstitutes][_destroy]&quot; type=&quot;hidden&quot; value=&quot;false&quot; /&gt;&lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn btn-default remove_nested_fields&quot; data-association=&quot;advisaryinstitutes&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-minus&quot; id=&quot;button&quot;&gt;&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;/p&gt;
+&lt;/div&gt;" id="advisaryinstitutes_fields_blueprint" style="display: none"></div> <div data-blueprint="&lt;div class=&quot;fields&quot;&gt;
+            &lt;p&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-lg-9&quot;&gt;
+                &lt;input class=&quot;form-control input-md&quot; id=&quot;qualityinventory_scientificpapers_attributes_new_scientificpapers_name&quot; name=&quot;qualityinventory[scientificpapers_attributes][new_scientificpapers][name]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;
+              &lt;/div&gt;
+                &lt;input id=&quot;qualityinventory_scientificpapers_attributes_new_scientificpapers__destroy&quot; name=&quot;qualityinventory[scientificpapers_attributes][new_scientificpapers][_destroy]&quot; type=&quot;hidden&quot; value=&quot;false&quot; /&gt;&lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn btn-default remove_nested_fields&quot; data-association=&quot;scientificpapers&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-minus&quot; id=&quot;button&quot;&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/p&gt;
+&lt;/div&gt;" id="scientificpapers_fields_blueprint" style="display: none"></div></form>    </div>
+  </div>
+
+
+      </div>
+    </p>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+
+
+</body>
+</html>

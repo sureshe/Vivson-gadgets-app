@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List Of Users </title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="nav navbar-header">
+      <a href="/admins/contact" class="navbar-brand">Contact</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">German</a></li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/admins/signin" data-method="delete" rel="nofollow">Sign Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav> <br><br><br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 sidebar-padding">
+          <div class="list-group">
+            <a href="/admins/index" class="list-group-item active">Current Users</a>
+            <a href="/roles/new" class="list-group-item">User Roles</a>
+            <a href="/gadgets/new" class="list-group-item">Gadget Inventory</a>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-9" id="padding">
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="lead"> Listing users </p>
+                </div>
+                  <div class="col-md-2">
+                    <a href="/admins/new" class="btn btn-primary">Add User</a>
+                  </div>
+                </div>
+
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Institution</th>
+                    <th>Role</th>
+                    <th colspan="3" class="text-center"></th>
+                  </tr>
+                  <% if @list.blank? %> 
+                    <p> No Users </p>
+                  <% else %>
+            <% @list.each do |allusers| %>
+            <tr>
+              <td><%= allusers.first_name%></td>
+              <td><%= allusers.last_name%></td>
+              <td><%= allusers.email%></td>
+              <td><%= allusers.institution%></td>
+              <td><%= allusers.role%></td>
+
+              <td><a href="/admins/39">Show</a></td>
+              <td><a href="/admins/39/edit">Edit</a></td>
+              <td><a href="/admins/destroy/<%=allusers.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </table>
+          <div  class='col-lg-offset-3'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title> User Login Form </title>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="nav navbar-header">
+    	<a href="admins/contact" class="navbar-brand">Contact</a>
+  	</div>
+
+  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<ul class="nav navbar-nav">
+      		<li class="dropdown">
+        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+        		<ul class="dropdown-menu">
+          			<li><a href="#">German</a></li>
+        		</ul>
+      		</li>
+    	</ul>
+    
+   	    <ul class="nav navbar-nav pull-right">
+	  		<li><a href="admins/new">New Member Registration</a></li>      
+      		<li><a href="admins/new">LOGIN</a></li>
+    	</ul>
+  	</div><!-- /.navbar-collapse -->
+</nav> <br><br><br><br><br><br>
+
+<div class="container">
+	<div class="well">
+		<div class="row">
+			<div class="col-lg-10">
+				<form accept-charset="UTF-8" action="/admins/index" class="simple_form form-horizontal" id="new_user" method="post" novalidate="novalidate" role="form">
+					
+					<div style="margin:0;padding:0;display:inline">
+						<input name="utf8" type="hidden" value="&#x2713;" />
+						<input name="authenticity_token" type="hidden" value="B1TuNwFttqwyi00Yz/h3t746UZXcJIeDlasaf2pnE4o=" />
+					</div>
+
+					<h1>Member Login</h1>
+					<legend>
+						<h4>If you are not a member yet please become a member <a href="/users/new">here</a> to Sign In</h4>
+					</legend>
+
+					
+					<h4>
+						<% if flash[:notice] %>
+  							<%= h flash[:notice] %>
+						<% end %>
+					</h4>
+
+					<div class="control-group email optional user_email form-group">
+
+				   		 <label class="email optional control-label col-sm-2 control-label" for="user_email">Email-Id</label>
+				    		<div class="col col-md-6">
+				    			<input autofocus="autofocus" class="string email optional form-control" id="user_email" name="email" placeholder=" Enter Your Email-Id" size="50" type="email" />
+				    		</div>
+					</div>
+
+
+				<div class="control-group password optional user_password form-group">
+					<label class="password optional control-label col-sm-2 control-label" for="user_password">Password</label>
+					<div class="col col-md-6">
+						<input class="password optional form-control" id="user_password" name="password" placeholder="Enter Your Password" size="50" type="password" />
+					</div>
+				</div>
+				    <input class="btn btn btn-primary" name="commit" style="margin-left:17%" type="submit" value="Sign in" />
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
