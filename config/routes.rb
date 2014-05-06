@@ -1,20 +1,30 @@
 Rails.application.routes.draw do
   
-root to: 'admins#signin'
-match ':controller(/:action(/:id))',:via => [:get, :post, :delete]
+root to: 'users#sign_in'
+# match ':controller(/:action(/:id))',:via => [:get, :post, :delete]
 
-# post 'users/index'
-# get 'users/indes'
-# get 'users/new'
-# post 'users/new'
-# post 'users/create'
-# get 'users/signin'
-# post 'users/signin'
-# get 'users/show'
-# post 'users/show'
-# get 'users/index'
-# get 'users/contact'
-# delete 'users/signin'
+resources :users do 
+  collection do 
+    get 'sign_in'
+    get 'sign_up'
+    post 'validUser'
+  end
+end
+resources :roles
+resources :gadgets
+resources :users_admin
+
+# post 'admins/index'
+# get 'admins/new'
+# post 'admins/new'
+# post 'admins/create'
+# get 'admins/signin'
+# post 'admins/signin'
+# get 'admins/show'
+# post 'admins/show'
+# get 'admins/index'
+# get 'admins/contact'
+# delete 'admins/signin'
 
 
 # get 'roles/create'

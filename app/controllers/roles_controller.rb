@@ -7,9 +7,13 @@ class RolesController < ApplicationController
 		@new.role_name = params[:name]
 		if
 			@new.save()
-			redirect_to :action => 'create' 
+			redirect_to :action => '#' 
 			#flash[:notice] = "You are signed up successfully"
 		end
+	end
+
+	def index
+		@list = Role.all
 	end
 
 	def create
