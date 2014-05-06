@@ -5,80 +5,44 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="nav navbar-header">
-    <a href="/admins/contact" class="navbar-brand">Contact</a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">German</a></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav pull-right">
-
-      <li><a href="/users/signin" data-method="delete" rel="nofollow">Sign Out</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav> <br><br><br>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2 sidebar-padding">
-            <div class="list-group">
-    <a href="/admins/index" class="list-group-item">Current Users</a>
-  <a href="/roles/new" class="list-group-item">User Roles</a>
-
-  <a href="/gadgets/new" class="list-group-item active">Gadget Inventory</a>
-
-
-</div>
-
- 
-  
-        
-        
-        
-        
-        
-        
-        
-       
-          </div>
+  <%= render :partial => "navbar"%>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render :partial => "sidebar"%>
           <div class="col-md-10">
             <div class="row">
-  <div class="col-md-12">
-    <p>
-      <div class="well">
+              <div class="col-md-12">
+              <p>
+                <div class="well">
         
-        <form accept-charset="UTF-8" action="/qualityinventory?method=post" class="form-horizontal" enctype="multipart/form-data" id="new_qualityinventory" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="1RpCnc4nA21gkjynaBNs7HIdTsMFOxARA6H4jKQpV64=" /></div>
-  <div class="container">
-    <div class="col-lg-10">
-      <div class="row">
-        <div class="form-group">      
-          <div class="col-md-9">
-            <input class="form-control input-md" id="qualityinventory_title" name="qualityinventory[title]" placeholder="Enter title here" required="required" size="30" type="text" />
-          </div>
-        <div class="col-md-3"> 
-          <a href="/qualityinventory" class="btn btn-primary">Back</a>
-            <input class="btn btn-primary" name="commit" type="submit" value="Save" />
-          </div>
-        </div>
-      </div>
-      <hr/>
-  <!-- col-lg-9 close  -->
-    <div class="col-lg-8">
-      <div class="row">
-        <div class="form-group">
-          <label class="col-md-4 control-label">Name of the method/gadget</label>  
-          <div class="col-md-7">
-            <input class="form-control input-md" id="qualityinventory_methodorgadget" name="qualityinventory[methodorgadget]" required="required" size="30" type="text" />
-          </div>
-        </div>
-      </div>
-      <br>
+                  <form accept-charset="UTF-8" action="/qualityinventory?method=post" class="form-horizontal" enctype="multipart/form-data" id="new_qualityinventory" method="post"> 
+                    <div style="margin:0;padding:0;display:inline">
+                      <input name="utf8" type="hidden" value="&#x2713;" />
+                      <input name="authenticity_token" type="hidden" value="1RpCnc4nA21gkjynaBNs7HIdTsMFOxARA6H4jKQpV64=" />
+                    </div>
+                <div class="container">
+                  <div class="col-lg-10">
+                    <div class="row">
+                      <div class="form-group">      
+                        <div class="col-md-9">
+                          <input class="form-control input-md" id="qualityinventory_title" name="qualityinventory[title]" placeholder="Enter title here" required="required" size="30" type="text" />
+                        </div>
+                        <div class="col-md-3"> 
+                          <a href="/qualityinventory" class="btn btn-primary">Back</a>
+                          <input class="btn btn-primary" name="commit" type="submit" value="Save" />
+                        </div>
+                      </div>
+                    </div><hr/>
+                    <div class="col-lg-8">
+                      <div class="row">
+                        <div class="form-group">
+                          <label class="col-md-4 control-label">Name of the method/gadget</label>  
+                            <div class="col-md-7">
+                              <input class="form-control input-md" id="qualityinventory_methodorgadget" name="qualityinventory[methodorgadget]" required="required" size="30" type="text" />
+                            </div>
+                        </div>
+                      </div>
+                    <br>
       <div class="row">
         <div class="form-group">
           <label class="col-md-4 control-label">What is it for?</label>  

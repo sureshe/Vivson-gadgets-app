@@ -1,38 +1,18 @@
 <html>
 <head>
-  <title> New User Registration </title>
+  <title> Edit Your Details </title>
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="nav navbar-header">
-      <a href="/admins/contact" class="navbar-brand">Contact</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">German</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav pull-right">
-        <li><a href="/admins/new">New Member Registration</a></li>      
-        <li><a href="/admins/signin">LOGIN</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav> <br><br><br><br><br>
-
-
+  <%= render :partial => "navbar"%>
+  <%= render :partial => "navbar"%>
   <div class="container">
   <div class="well">
   <div class="row"> 
   <div class="col-lg-10 ">
 
-  <%= form_for :user, :url => users_admin_index_path , :method => 'put' do %>
-      <!-- <form accept-charset="UTF-8" action="/admins/create" class="simple_form form-horizontal" id="new_user" method="post" novalidate="novalidate" role="form"> -->
+  <%= form_for :user, :url => users_admin_path , :method => 'put' do %>
+     
       <div style="margin:0;padding:0;display:inline">
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="B1TuNwFttqwyi00Yz/h3t746UZXcJIeDlasaf2pnE4o=" />
@@ -46,21 +26,21 @@
           <label class="string optional control-label control-label col-md-2" for="user_Firstname">Firstname</label>
         <div class="col-md-4">
         
-        <input class="form-control" id="user_first_name" name="firstname" size="30" type="text" />
+        <input class="form-control" id="user_first_name" name="firstname" size="30" type="text" value = "<%= @user.first_name%>" />
   </div>
   </div>
 
     <div class="form-group">
       <label class="string optional control-label control-label col-md-2" for="user_Lastname">Lastname</label>
         <div class="col-md-4">
-          <input class="form-control" id="user_last_name" name="lastname" size="30" type="text" />
+          <input class="form-control" id="user_last_name" name="lastname" size="30" type="text" value="<%= @user.last_name%>" />
         </div>
     </div>
 
     <div class="form-group">
       <label class="string optional control-label control-label col-md-2" for="user_Institution">Institution</label>
         <div class="col-md-4">
-          <input class="form-control" id="user_institution" name="institution" size="30" type="text" />
+          <input class="form-control" id="user_institution" name="institution" size="30" type="text" value="<%= @user.institution%>" />
         </div>
     </div>
 
@@ -75,18 +55,10 @@
       <label class="string optional control-label control-label col-md-2" for="user_password">Password</label>
         
         <div class="col-md-4">
-          <input class="form-control" id="user_password" name="password" size="30" type="password" />
+          <input class="form-control" id="user_password" name="password" size="30" type="password" value="<%= @user.password%>" />
         </div>
     </div>
           
-    <div class="form-group">
-      <label class="string optional control-label control-label col-md-2" for="user_Confirmation">Confirmation</label>
-        <div class="col-md-4">
-          <input class="form-control" id="user_password_confirmation" name="password_confirmation" size="30" type="password" />
-        </div>
-    </div>
-
-
     <div class="form-group">
       <label class="col-md-2 control-label">Role</label>
         <div class="col-md-4">

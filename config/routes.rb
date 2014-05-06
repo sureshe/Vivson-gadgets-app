@@ -10,9 +10,15 @@ resources :users do
     post 'validUser'
   end
 end
+
 resources :roles
 resources :gadgets
-resources :users_admin
+
+resources :users_admin do
+  collection do
+    get 'sign_out'
+  end
+end
 
 # post 'admins/index'
 # get 'admins/new'

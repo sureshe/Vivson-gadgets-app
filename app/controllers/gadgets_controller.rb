@@ -21,4 +21,10 @@ class GadgetsController < ApplicationController
 		
 	end
 
+	def index
+		def index
+		@user = Gadget.all
+	end
+	end
+
 end

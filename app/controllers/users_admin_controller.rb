@@ -37,12 +37,8 @@ class UsersAdminController < ApplicationController
 
 
 	def destroy
-		if User.find(params[:id]).destroy()
-			render :action => 'index'
-		else
-			render :action => 'index'
-		end
-
+			User.find(params[:id]).destroy()
+			redirect_to users_admin_index_path
 	end
 
 
@@ -54,11 +50,32 @@ class UsersAdminController < ApplicationController
 	def contact
 		
 	end
+	
+
 	def edit
 		@user = User.find(params[:id])
 	end
 
+	def sign_out
+		
+	end
 
-	
+	def update
+
+		@user = User.find(params[:id])
+
+		@new.first_name = params[:firstname]
+		@new.last_name = params[:lastname]
+		@new.institution = params[:institution]
+		@new.email = params[:email]
+		@new.password = params[:password]
+		@new.role = params[:role]
+		
+		if
+			@new.save()
+			redirect_to users_admin_path
+			#flash[:notice] = "You are signed up successfully"
+		end
+	end
 
 end
