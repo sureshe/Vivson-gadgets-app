@@ -12,16 +12,16 @@ class UsersController < ApplicationController
 	def create
 		@new = User.new
 
-		@new.first_name = params[:firstname]
-		@new.last_name = params[:lastname]
-		@new.institution = params[:institution]
-		@new.email = params[:email]
-		@new.password = params[:password]
-		@new.password = params[:role]
+		@new.first_name = params[:user][:first_name]
+		@new.last_name = params[:user][:last_name]
+		@new.institution = params[:user][:institution]
+		@new.email = params[:user][:email]
+		@new.password = params[:user][:password]
+		#@new.role = params[:role]
 		
 		if
 			@new.save()
-			redirect_to sign_in_users_path
+			redirect_to users_admin_index_path
 			#flash[:notice] = "You are signed up successfully"
 		end
 	end

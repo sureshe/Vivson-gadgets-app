@@ -1,16 +1,7 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>QuaLIFY Inventory</title>
-</head>
-
-<body>
-
-<%= render :partial => "navbar"%>
   <div class="container-fluid">
 				<div class="row">
-					<%= render :partial => "sidebar"%>
+					
 
 					<div class="col-md-10">
 						<div class="row">
@@ -32,7 +23,7 @@
       </div>
     </div>
     <div class="col-md-2">
-      <a href="/qualityinventory/new" class="btn btn-primary">ADD GADGET</a>
+      <%= link_to 'ADD GADGET', new_gadget_path, :method => 'get', :class => "btn btn-primary"%>
     </div>
       <table class="table table-striped table-hover">
         <tr> 
@@ -229,5 +220,4 @@
 					</div>
 				</div>
 			</div>
-</body>
-</html>
+

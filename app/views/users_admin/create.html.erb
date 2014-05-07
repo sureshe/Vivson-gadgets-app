@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>QuaLIFY Inventory</title>
-</head>
 
-<body>
-  <%= render :partial => "navbar"%>
   <div class="container-fluid">
 	 <div class="row">
-		  <%= render :partial => "sidebar"%>
+		  
 			<div class="col-md-10">
 			 <div class="col-md-9">
         <div class="well">
@@ -23,37 +16,37 @@
                   <div class="form-group">
                    <label class="col-md-2 control-label" for="user_First_name">First Name</label>
                     <div class="col-md-6">
-                      <input class="form-control input-md" id="user_first_name" name="firstname" required="required" size="30" type="text" />
+                      <input class="form-control input-md" id="user_first_name" name="user[first_name]" required="required" size="30" type="text" />
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="user_Last Name">Last Name</label>
                       <div class="col-md-6">
-                        <input class="form-control input-md" id="user_last_name" name="lastname" required="required" size="30" type="text" />
+                        <input class="form-control input-md" id="user_last_name" name="user[last_name]" required="required" size="30" type="text" />
                       </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="user_Institution">Institution</label>
                       <div class="col-md-6">
-                        <input class="form-control input-md" id="user_institution" name="institution" required="required" size="30" type="text" />
+                        <input class="form-control input-md" id="user_institution" name="user[institution]" required="required" size="30" type="text" />
                       </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="user_Email">Email-id</label>
                       <div class="col-md-6">
-                        <input class="form-control input-md" id="user_email" name="emailid" required="required" size="30" type="text" value="" />
+                        <input class="form-control input-md" id="user_email" name="user[email]" required="required" size="30" type="text" value="" />
                       </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="user_Password">Password</label>
                       <div class="col-md-6">
-                        <input class="form-control input-md" id="user_password" name="password" size="30" type="password" />
+                        <input class="form-control input-md" id="user_password" name="user[password]" size="30" type="password" />
                       </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="user_Password Confirmation">Password Confirmation</label>
                       <div class="col-md-6">
-                        <input class="form-control input-md" id="user_password_confirmation" name="password confirmation" size="30" type="password" />
+                        <input class="form-control input-md" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
                       </div>
                   </div>
                   <div class="form-group">
@@ -79,8 +72,6 @@
               </div>
             </div>
           </div>
-        </div>
-			</div>
-		</div>
-  </body>
-</html>
+      </div>
+	</div>
+</div>

@@ -2,26 +2,25 @@ class UsersAdminController < ApplicationController
 	protect_from_forgery
 
 	def index
-		@user = User.all
+		@users = User.all
 	end
 
 
 	def create
 		@new = User.new
 
-		@new.first_name = params[:firstname]
-		@new.last_name = params[:lastname]
-		@new.institution = params[:institution]
-		@new.email = params[:email]
-		@new.password = params[:password]
-		@new.role = params[:role]
+		@new.first_name = params[:user][:first_name]
+		@new.last_name = params[:user][:last_name]
+		@new.institution = params[:user][:institution]
+		@new.email = params[:user][:email]
+		@new.password = params[:user][:password]
+		#@new.role = params[:role]
 		
 		if
 			@new.save()
 			redirect_to users_admin_index_path
 			#flash[:notice] = "You are signed up successfully"
 		end
-		
 	end
 
 
@@ -35,23 +34,19 @@ class UsersAdminController < ApplicationController
 		
 	end
 
-
 	def destroy
 			User.find(params[:id]).destroy()
 			redirect_to users_admin_index_path
 	end
 
-
 	def signin
 		
 	end
-
 
 	def contact
 		
 	end
 	
-
 	def edit
 		@user = User.find(params[:id])
 	end
@@ -62,13 +57,13 @@ class UsersAdminController < ApplicationController
 
 	def update
 
-		@user = User.find(params[:id])
+		@new = User.find(params[:id])
 
-		@new.first_name = params[:firstname]
-		@new.last_name = params[:lastname]
-		@new.institution = params[:institution]
-		@new.email = params[:email]
-		@new.password = params[:password]
+		@new.first_name = params[:user][:first_name]
+		@new.last_name = params[:user][:last_name]
+		@new.institution = params[:user][:institution]
+		@new.email = params[:user][:email]
+		@new.password = params[:user][:password]
 		@new.role = params[:role]
 		
 		if
@@ -76,6 +71,17 @@ class UsersAdminController < ApplicationController
 			redirect_to users_admin_path
 			#flash[:notice] = "You are signed up successfully"
 		end
+
+
+		# respond_to do |format|
+		# 	if @user.save
+		#     @user.add_role params[:user][:role]
+		#     format.html { redirect_to users_admin_index_path }
+		#     flash[:notice] =  'User successfully created.' 
+		# 	else
+	 #    	format.html {render action: 'new'}
+		# 	end
+		# end
 	end
 
 end

@@ -1,15 +1,7 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title> User Roles </title>
-</head>
-
-<body>
-  <%= render :partial => "navbar"%>
 	<div class="container-fluid">
 		<div class="row">
-			<%= render :partial => "sidebar"%>
+			
 
 			<div class="col-md-10">
 				<div class="col-md-9" id="padding">
@@ -18,7 +10,7 @@
 	           <p class="lead">Listing Roles</p>
             </div>
             <div class=" col-md-2">
-              <%= link_to 'Add Role', roles_path, :method => 'post' :class => 'btn btn-primary">Add Role'%>
+              <%= link_to 'Add Role', new_role_path, :method => 'get', :class => 'btn btn-primary">Add Role'%>
             </div>
           </div>
       <table class="table table-striped table-hover">
@@ -37,5 +29,4 @@
 </div>
 </div>
 </div>
-</body>
-</html>
+

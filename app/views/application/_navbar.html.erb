@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <div class="nav navbar-header">
       <a href="/admins/contact" class="navbar-brand">Contact</a>
     </div>
@@ -13,9 +13,10 @@
         </li>
       </ul>
       <ul class="nav navbar-nav pull-right">
+        <li>
         <%= link_to 'New Member Registration', sign_up_users_path, :method => 'get'%>
-        <!-- <li><a href="/admins/new">New Member Registration</a></li> -->      
+        </li>
         <li><a href="/users/sign_in">LOGIN</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </nav> <br><br><br><br><br>
+  </nav> <br>

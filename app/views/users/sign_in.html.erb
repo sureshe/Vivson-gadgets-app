@@ -1,8 +1,5 @@
-<html>
-<body>
-<%= render :partial => "navbar"%>
 <div class="container">
-	<div class="well">
+	
 		<div class="row">
 			<div class="col-lg-10">
 			
@@ -23,28 +20,26 @@
   							<%= h flash[:notice] %>
 						<% end %>
 					</h4>
-
+					<div class="row">
 					<div class="control-group email optional user_email form-group">
-
-				   		 <label class="email optional control-label col-sm-2 control-label" for="user_email">Email-Id</label>
+						<label class="email optional control-label col-sm-2 control-label" for="user_email">Email</label>
 				    		<div class="col col-md-6">
-				    			<input autofocus="autofocus" class="string email optional form-control" id="user_email" name="email" placeholder=" Enter Your Email-Id" size="50" type="email" />
+				    			<input autofocus="autofocus" class="string email optional form-control" id="user_email" name="email" placeholder=" Enter Your Email-Id" size="70" type="email" />
 				    		</div>
-					</div>
-
-
+				    	</div>
+					</div><br>
+					<div class="row">
 					<div class="control-group password optional user_password form-group">
 						<label class="password optional control-label col-sm-2 control-label" for="user_password">Password</label>
 							<div class="col col-md-6">
 								<input class="password optional form-control" id="user_password" name="password" placeholder="Enter Your Password" size="50" type="password" />
 							</div>
 					</div>
+					</div><br>
 				    <input class="btn btn btn-primary" name="commit" style="margin-left:17%" type="submit" value="Sign in" />
 				
 				<% end %>
 			</div>
 		</div>
-	</div>
+
 </div>
-</body>
-</html>
