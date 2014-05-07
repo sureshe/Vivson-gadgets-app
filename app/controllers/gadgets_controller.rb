@@ -23,8 +23,8 @@ class GadgetsController < ApplicationController
 
 	def index
 		def index
-		@user = Gadget.all
-	end
+			@user = Gadget.all
+		end
 	end
 
 end

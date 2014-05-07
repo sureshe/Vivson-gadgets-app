@@ -83,13 +83,14 @@
             <option value="user">user</option></select>
         </div>
       </div>
-    </div>
+    </div><br>
 
     <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2" style="padding-top:20px;">
-        <input class="btn btn-primary" name="commit" type="submit" value="Become a member" /> 
+      <div class="col-md-offset-2 col-md-8">
+        <input class="btn btn-success" name="commit" type="submit" value="Submit" />
+        <%= link_to 'Back', users_admin_index_path, :method => 'get', :class => "btn btn-default"%>
       </div>
-    <div>
+    </div>
   <% end %> 
 </div>
 </div>

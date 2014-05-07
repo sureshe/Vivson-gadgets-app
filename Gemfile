@@ -8,6 +8,7 @@ gem 'therubyrhino'
 gem 'less-rails-bootstrap'
 gem 'less-rails'
 gem 'less-rails-bootswatch'
+gem 'better_errors', '>= 1.1.0'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'

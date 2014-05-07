@@ -1,22 +1,22 @@
 class RolesController < ApplicationController
 	protect_from_forgery
 	
-	def new
-		@new = Role.new
-
-		@new.role_name = params[:name]
-		if
-			@new.save()
-			redirect_to :action => '#' 
-			#flash[:notice] = "You are signed up successfully"
-		end
-	end
-
 	def index
-		@list = Role.all
+		@user_roles = Role.all
 	end
 
 	def create
+		@new = Role.new
+
+		@new.role_name = params[:role][:name]
+		if
+			@new.save()
+			redirect_to roles_path
+			#flash[:notice] = "role is added"
+		end
+	end
+
+	def new
 		
 	end
 
@@ -25,10 +25,25 @@ class RolesController < ApplicationController
 	end
 
 	def edit
-		
+		@role = Role.find(params[:id])
 	end
 
-	def delete
+	def update
+		@role = Role.find(params[:id])
+
+		@role.first_name = params[:user][:first_name]
 		
+		
+		if
+			@new.save()
+			redirect_to users_admin_path
+			#flash[:notice] = "You are signed up successfully"
+		end
 	end
+
+	def destroy
+			Role.find(params[:id]).destroy()
+			redirect_to roles_path
+	end
+	
 end

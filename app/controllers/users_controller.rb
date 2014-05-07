@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
 	protect_from_forgery
 
-	def sign_in
-		
-	end
-
-	def sign_up
-		
+	def index
+		@list = User.all
 	end
 
 	def create
@@ -26,8 +22,12 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def index
-		@list = User.all
+	def new
+		
+	end
+
+	def update
+		
 	end
 
 	def validUser
@@ -46,11 +46,12 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def new
+	def sign_in
 		
 	end
 
-	def update
+	def sign_up
 		
 	end
+
 end
