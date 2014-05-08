@@ -1,7 +1,7 @@
 <div class="container">
-<div class="row"> 
-<div class="col-lg-10 ">              
-        <%= form_for @gadget,:url => {controller: 'gadgets', action: 'create', method: "post"} do |f|%>
+    <div class="row"> 
+      <div class="col-lg-10 ">              
+      <%= form_for @gadget,:url => {controller: 'gadgets', action: 'update', method: "patch"} do |f|%>
       <%# @method = 'post, class: 'form-horizontal'  do |f| %>
   <div class="container">
     <div class="col-lg-10">
@@ -152,8 +152,6 @@
   <!-- insert code for avatars here -->
   <!-- insert code for video location here -->
 <% end %>
-
-
       </div>
     </div>   
-</div>
+</div> 

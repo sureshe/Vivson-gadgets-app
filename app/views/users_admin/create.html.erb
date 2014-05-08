@@ -1,77 +1,82 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-10">
+<div class="col-md-9">
+  <div class="well">
+   	<legend>User Registration Form </legend>
+      <fieldset>
+        <div class="form-horizontal">
+          <%= form_for :users, :url => {controller: 'users_admin', action: 'create'}, :method=>'post' do |user| %> 
+            
+            <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="&#x2713;" />
+              <input name="authenticity_token" type="hidden" value="Ng9VhSIqGmalAc1q4I+p2yiej91xFr3SSIVe2IViEmQ=" />
+            </div>
+                  
+            <div class="form-group row">
+              <%= user.label :FirstName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.text_field :first_name, class: "form-control" %>
+                </div>
+            </div>
 
-  <div class="container-fluid">
-	 <div class="row">
-		  
-			<div class="col-md-10">
-			 <div class="col-md-9">
-        <div class="well">
-   	      <legend>User Registration Form </legend>
-            <fieldset>
-              <div class="form-horizontal">
-                <form accept-charset="UTF-8" action="/admins/create" class="new_user" id="new_user" method="post">
-                  <div style="margin:0;padding:0;display:inline">
-                    <input name="utf8" type="hidden" value="&#x2713;" />
-                    <input name="authenticity_token" type="hidden" value="Ng9VhSIqGmalAc1q4I+p2yiej91xFr3SSIVe2IViEmQ=" />
-                  </div>
-                  <div class="form-group">
-                   <label class="col-md-2 control-label" for="user_First_name">First Name</label>
-                    <div class="col-md-6">
-                      <input class="form-control input-md" id="user_first_name" name="user[first_name]" required="required" size="30" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="user_Last Name">Last Name</label>
-                      <div class="col-md-6">
-                        <input class="form-control input-md" id="user_last_name" name="user[last_name]" required="required" size="30" type="text" />
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="user_Institution">Institution</label>
-                      <div class="col-md-6">
-                        <input class="form-control input-md" id="user_institution" name="user[institution]" required="required" size="30" type="text" />
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="user_Email">Email-id</label>
-                      <div class="col-md-6">
-                        <input class="form-control input-md" id="user_email" name="user[email]" required="required" size="30" type="text" value="" />
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="user_Password">Password</label>
-                      <div class="col-md-6">
-                        <input class="form-control input-md" id="user_password" name="user[password]" size="30" type="password" />
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="user_Password Confirmation">Password Confirmation</label>
-                      <div class="col-md-6">
-                        <input class="form-control input-md" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-md-2 control-label">Role</label>
-                      <div class="col-md-4">
-                        <select class="form-control" id="user_role" name="role">
-                              <option value=""></option>
-                              <option value="" selected="selected"></option>
-                              <option value=""></option>
-                              <option value=""></option>
-                              <option value=""></option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-md-offset-2 col-md-8">
-                        <input class="btn btn-success" name="commit" type="submit" value="Submit" />
-                          <a href="/admins/new" class="btn btn-default">Back</a>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
+            <div class="form-group row">
+              <%= user.label :LastName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.text_field :Last_name, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <%= user.label :Institution, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.text_field :institution, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <%= user.label :Email, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.text_field :email, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <%= user.label :Password, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.password_field :password, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <%= user.label :Confirmation, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+              <%= user.password_field :Confirmation, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+              <%= user.label :Role, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+                <div class="col-md-4 col-lg-4">
+                  <select class="form-control" name="user[role]">
+                    <%= @roles.each do |r|%>
+                      <option value="<%= r.role%>"><%= r.role%></option>
+                    <% end %>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-8">
+                <%= user.submit "Save", class: "btn btn-primary", style: "margin-left: 20%"%>
+                <%= link_to 'Back', users_admin_index_path, :method => 'get', :class => "btn btn-default"%>
               </div>
             </div>
-          </div>
+          </fieldset>
+        <% end %>
       </div>
-	</div>
+    </div>
+  </div>
+</div>
+</div>
 </div>

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 		#@new.role = params[:role]
 		
 		if
-			@new.save()
+			@new.save
 			redirect_to users_admin_index_path
 			#flash[:notice] = "You are signed up successfully"
 		end
@@ -31,8 +31,8 @@ class UsersController < ApplicationController
 	end
 
 	def validUser
-		@r_email = params[:email]
-		@r_password = params[:password]
+		@r_email = params[:user][:email]
+		@r_password = params[:user][:password]
 
 		@c_email = User.find_by_email(@r_email)
 		@c_password = User.find_by_password(@r_password)

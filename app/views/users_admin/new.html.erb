@@ -1,94 +1,77 @@
+<div class="container">
+<div class="row"> 
+<div class="col-lg-10 ">
 
-
-  <div class="container">
-  
-  <div class="row"> 
-  <div class="col-lg-10 ">
-
-  <%= form_for :user, :url => users_admin_index_path do %>
+  <%= form_for :user, :url => users_admin_index_path do |user|%>
       
-      <div style="margin:0;padding:0;display:inline">
+    <div style="margin:0;padding:0;display:inline">
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="B1TuNwFttqwyi00Yz/h3t746UZXcJIeDlasaf2pnE4o=" />
-  </div>
+    </div>
+        
         <h1>User Registration Form</h1>
-        <legend>
-          <h4>To get access to this inventory list of gadgets please fill out the following form. Thank you </h4>
-        </legend>
+    <legend>
+      <h4>To get access to this inventory list of gadgets please fill out the following form. Thank you </h4>
+    </legend>
         
-        <div class="row">
-          <div class="form-group">
-            <label class="string optional control-label control-label col-md-2" for="user_Firstname">Firstname</label>
-              <div class="col-md-4">
-                <input class="form-control" id="user_first_name" name="user[first_name]" size="30" type="text" />
-              </div>
-          </div>
-        </div><br>
-
-      <div class="row">
-        <div class="form-group">
-          <label class="string optional control-label control-label col-md-2" for="user_Lastname">Lastname</label>
-            <div class="col-md-4">
-              <input class="form-control" id="user_last_name" name="user[last_name]" size="30" type="text" />
-            </div>
+    <div class="form-group row">
+      <%= user.label :FirstName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+        <div class="col-md-4 col-lg-4">
+              <%= user.text_field :first_name, class: "form-control" %>
         </div>
-      </div><br>
+    </div>
 
-      <div class="row">
-        <div class="form-group">
-          <label class="string optional control-label control-label col-md-2" for="user_Institution">Institution</label>
-            <div class="col-md-4">
-              <input class="form-control" id="user_institution" name="user[institution]" size="30" type="text" />
+    <div class="form-group row">
+          <%= user.label :LastName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+            <div class="col-md-4 col-lg-4">
+          <%= user.text_field :last_name, class: "form-control" %>
             </div>
-        </div>
-      </div><br>
+    </div>
 
-    <div class="row">
-      <div class="form-group">
-        <label class="string optional control-label control-label col-md-2" for="user_Email">Email</label>
-          <div class="col-md-4">
-            <input class="form-control" id="user_email" name="user[email]" size="30" type="text" value="" />
-          </div>
-      </div>
-    </div><br>
+    <div class="form-group row">
+          <%= user.label :Institution, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+            <div class="col-md-4 col-lg-4">
+          <%= user.text_field :institution, class: "form-control" %>
+            </div>
+    </div>
+
+    <div class="form-group row">
+          <%= user.label :Email, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+            <div class="col-md-4 col-lg-4">
+          <%= user.text_field :email, class: "form-control" %>
+            </div>
+    </div>
         
-    <div class="row">
-      <div class="form-group">
-        <label class="string optional control-label control-label col-md-2" for="user_password">Password</label>
-          <div class="col-md-4">
-            <input class="form-control" id="user_password" name="user[password]" size="30" type="password" />
-          </div>
-      </div>
-    </div><br>
+    <div class="form-group row">
+          <%= user.label :Password, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+            <div class="col-md-4 col-lg-4">
+          <%= user.password_field :password, class: "form-control" %>
+            </div>
+    </div>
 
-    <div class="row">      
-      <div class="form-group">
-        <label class="string optional control-label control-label col-md-2" for="user_Confirmation">Confirmation</label>
-          <div class="col-md-4">
-            <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
-          </div>
-      </div>
-    </div><br>
+    <div class="form-group row">
+          <%= user.label :Confirmation, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+            <div class="col-md-4 col-lg-4">
+          <%= user.password_field :confirmation, class: "form-control" %>
+            </div>
+    </div>
 
-    <div class="row">
-      <div class="form-group">
-        <label class="col-md-2 control-label">Role</label>
-        <div class="col-md-4">
-          <select class="form-control" id="user_role" name="user[role]">
-            <option value="Administrator">Administrator</option>
-            <option value="NRC Researcher" selected="selected">NRCResearcher</option>
-            <option value="ramu">ramu</option>
-            <option value="User">User</option>
-            <option value="chairmen">chairmen</option>
-            <option value="user">user</option></select>
+    <% @roles = Role.all%>
+    <div class="form-group row">
+      <%= user.label :Role, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+        <div class="col-md-4 col-lg-4">
+           <select class="form-control" name="user[role_name]">
+            <%= @roles.each do |r|%>
+               <option value="<%= r.role_name%>"><%= r.role_name%></option>
+            <% end %>
+           </select>
         </div>
-      </div>
-    </div><br>
+    </div>
 
     <div class="form-group">
       <div class="col-md-offset-2 col-md-8">
-        <input class="btn btn-success" name="commit" type="submit" value="Submit" />
-        <%= link_to 'Back', users_admin_index_path, :method => 'get', :class => "btn btn-default"%>
+       <%= user.submit "Save", class: "btn btn-primary", style: "margin-left: 20%"%>
+       <%= link_to 'Back', users_admin_index_path, :method => 'get', :class => "btn btn-default"%>
       </div>
     </div>
   <% end %> 

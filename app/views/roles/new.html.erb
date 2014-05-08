@@ -1,35 +1,36 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="col-md-9">
-         <legend>Add Role </legend>
-          <fieldset>
-            <div class="form-horizontal">
-
-            <%= form_for :user,:url => roles_path ,:method => 'post' , :class => 'new_role' do %>
-              <!-- <form accept-charset="UTF-8" action="/roles/create" class="new_role" id="new_role" method="post"> -->
-                <div style="margin:0;padding:0;display:inline">
-                  <input name="utf8" type="hidden" value="&#x2713;" />
-                  <input name="authenticity_token" type="hidden" value="Vi+hJLZZa4S/8G9Ouqc2TLlg5VcIJ/KTHf90N0EfMOk=" />
-                </div>
-                <div class="form-group">
-                  <label class="col-md-2 control-label" for="role_Name">Name</label>
-                    <div class="col-md-6">
-                      <input class="form-control input-md" id="role_name" name="role[name]" size="30" type="text" />
-                    </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-offset-2 col-md-8">
-                    <input class="btn btn-success" name="commit" type="submit" value="Submit" />
-                      <a href="/roles" class="btn btn-default">Back</a>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </fieldset>
+<div class="row">
+<div class="col-md-10">
+<div class="col-md-9">
+  
+  <legend>Add Role </legend>
+  <fieldset>
+    <div class="form-horizontal">
+      <%= form_for :user, :url => {controller: 'roles', action: 'create'},:method=>'get' do |user|%>
+    <div style="margin:0;padding:0;display:inline">
+      <input name="utf8" type="hidden" value="&#x2713;" />
+      <input name="authenticity_token" type="hidden" value="Vi+hJLZZa4S/8G9Ouqc2TLlg5VcIJ/KTHf90N0EfMOk=" />
+    </div>
+        
+    <div class="form-group row">
+      <%= user.label :Name, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+        <div class="col-md-4 col-lg-4">
+      <%= user.text_field :role_name, class: "form-control" %>
         </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-8">
+        <%= user.submit "Submit", class: "btn btn-primary", style: "margin-left: 0%"%>
+        <%= link_to 'Back', roles_path, :method => 'get', :class => "btn btn-default" %>
       </div>
     </div>
+      <% end %>
+    </div>
+    </fieldset>
   </div>
+</div>
+</div>
+</div>
 </div>
   

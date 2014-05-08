@@ -1,30 +1,30 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-10">
+<div class="col-md-9" id="padding">
 
-  <div class="container-fluid">
-    <div class="row">
+  <div class="row">
+    <div class="col-md-10">
+      <p class="lead">Listing Roles</p>
+    </div>
+    <div class=" col-md-2">
+    <%= link_to 'Add Role', new_role_path, :class => "btn btn-primary"%>
+    </div>
+  </div>
       
-
-      <div class="col-md-10">
-        <div class="col-md-9" id="padding">
-          <div class="row">
-            <div class="col-md-10">
-             <p class="lead">Listing Roles</p>
-            </div>
-            <div class=" col-md-2">
-              <a href="/roles/create" class="btn btn-primary">Add Role</a>
-            </div>
-          </div>
-      <table class="table table-striped table-hover">
-      <tr>
-        <th>Role Name</th>
-        <th colspan="3" class="text-center"></th>
-      </tr>
-      <tr>
-        <td></td>
-        <td><a href="/roles/571/edit">Edit</a></td>
-        <td><a href="/roles/571" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
-      </tr>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Role Name</th>
+      <th colspan="3" class="text-center"></th>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="/roles/571/edit">Edit</a></td>
+      <td><a href="/roles/571" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+    </tr>
     <div  class='col-lg-offset-4'>
   </div>
+  
 </div>
 </div>
 </div>

@@ -21,9 +21,10 @@ class UsersAdminController < ApplicationController
 		@new.password = params[:user][:password]
 		#@new.role = params[:role]
 		
-		if
-			@new.save()
+		if @new.save
 			redirect_to users_admin_index_path
+		else
+			render 'new'
 			#flash[:notice] = "You are signed up successfully"
 		end
 	end
@@ -49,6 +50,8 @@ class UsersAdminController < ApplicationController
 		
 		if @user.save
 			redirect_to users_admin_index_path
+		else
+			render 'edit'
 			#flash[:notice] = "You are signed up successfully"
 		end
 	end

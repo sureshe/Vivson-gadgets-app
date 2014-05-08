@@ -14,9 +14,22 @@
 ActiveRecord::Schema.define(version: 20140505115017) do
 
   create_table "gadgets", force: true do |t|
-    t.string   "gatgetapp"
-    t.string   "name_of_the_tool"
-    t.string   "analysis_groups"
+    t.string   "title"
+    t.string   "method_or_gadget"
+    t.string   "useful_for"
+    t.string   "analysis_group"
+    t.text     "gadget_description"
+    t.decimal  "cost",                     precision: 10, scale: 0
+    t.string   "company_name"
+    t.text     "company_description"
+    t.string   "company_website"
+    t.string   "technology_used"
+    t.text     "scientific_description"
+    t.text     "field_1_explanation"
+    t.string   "field_2_useful_for_which"
+    t.text     "field_2_explanation"
+    t.string   "name"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

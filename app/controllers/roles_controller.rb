@@ -8,9 +8,9 @@ class RolesController < ApplicationController
 	def create
 		@new = Role.new
 
-		@new.role_name = params[:role][:name]
+		@new.role_name = params[:role][:role_name]
 		if
-			@new.save()
+			@new.save
 			redirect_to roles_path
 			#flash[:notice] = "role is added"
 		end
@@ -31,13 +31,10 @@ class RolesController < ApplicationController
 	def update
 		@role = Role.find(params[:id])
 
-		@role.first_name = params[:user][:first_name]
-		
-		
+		@role.role_name = params[:role][:role_name]
 		if
-			@new.save()
-			redirect_to users_admin_path
-			#flash[:notice] = "You are signed up successfully"
+			@role.save
+			redirect_to roles_path
 		end
 	end
 
