@@ -1,0 +1,215 @@
+<div class="col-md-10">
+<div class="row">
+<div class="col-md-8">
+    <p>
+      
+ <!-- flash end -->
+        
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-5">
+              Gadget
+            </div>
+            <div class="col-md-7">
+              <!-- <a href="/qualityinventory" class="btn btn-primary">Back</a> --> 
+              <%= link_to 'Back', gadgets_path,:class => 'btn btn-primary' %>
+              <a href="/qualityinventory/9/edit" class="btn btn-primary">Edit</a>
+                <a href="/qualityinventory/9/generatereport.pdf" class="btn btn-primary">Pdf</a>
+              <button class="btn btn-primary" data-toggle="modal" data-target ="#myModal">Send mail 
+              </button>
+            </div>
+          </div>
+        </div> <!-- row end -->
+        <hr/>
+        <div class="row">
+          <div class="col-md-8">
+            <dl>
+              <dt>Name of the method/gadget</dt>
+              <dd><%= @show_gadget.method_or_gadget%></dd>
+            </dl>
+            <dl>
+              <dt>What is it for?</dt>
+              <dd></dd>
+            </dl>
+            
+            <dl>
+            </dl>
+            <dl>
+              <dt>Type of method/gadget</dt>
+              <dd> </dd>
+            </dl>
+            <dl>
+              <dt>Gadget description</dt>
+              <dd><%= @show_gadget.gadget_description %></dd>
+            </dl>
+            <dl>
+              <dt>Cost</dt>
+              <dd><%= @show_gadget.cost %></dd>
+            </dl>
+            <dl>
+              <dt>Is the tool avaliable to users?</dt>
+                <dd> 
+                    
+                </dd>
+            </dl>
+            <dl>
+            </dl>
+            <dl>
+            </dl>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <img alt="" data-target=".bs-example-modal-lg" data-toggle="modal" src="/system/qualityinventories/avatars/000/000/009/medium/004_Adidas_micoach.jpg?1397049350" />
+            </div>
+            <div class="row">
+                <iframe style="margin-top:6px;" width="177" height="160" src="//www.youtube.com/embed/REqqkL_00-4" frameborder="0" allowfullscreen>show video</iframe>
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <dl>
+          <dt>Company name</dt>
+          <dd><%= @show_gadget.company_name%> </dd>
+        </dl>
+        <dl>
+          <dt>Company description</dt>
+          <dd><%= @show_gadget.company_description%></dd>
+        </dl>
+        <dl>
+          <dt>Company Website</dt>
+          <dd><%= @show_gadget.company_website%></dd>
+        </dl>
+        <dl>
+        </dl>
+        <hr/>
+        <dl>
+        </dl>
+        <dl>
+        </dl>
+        <dl>
+        </dl>
+        <hr/>
+        
+        <!-- <dl>
+          <dt> Preliminary evaluation by vivsan</dt>
+          <dd> 
+              No
+              Yes
+          </dd>
+        </dl> -->
+        <dl>
+        <hr/>
+        
+        <dl>
+
+          <dt>Evaluated by NRC </dt>
+          <dd></dd>
+
+        </dl>
+        <dl>
+
+          <dt>Usefulness for which field lab? </dt>
+          <dd>
+          
+           </dd>
+        
+        </dl>
+        
+        <dl>
+        </dl>
+        <dl>
+        </dl>
+      </div><!-- close to well   -->
+    </p>
+  </div>
+  <p>
+    <!-- <div class="col-md-4"> 
+      
+       <div id="ratings">
+              <b> Average rating: </b> <div class="ajaxful-rating-wrapper" id="ajaxful_rating_no-small_qualityinventory_9"><ul class="ajaxful-rating"><li class="show-value" style="width: 60.0%">Global rating average: 3.0 out of 5</li><li><span class="stars-1" title="Global rating average: 3.0 out of 5">3.0</span></li><li><span class="stars-2" title="Global rating average: 3.0 out of 5">3.0</span></li><li><span class="stars-3" title="Global rating average: 3.0 out of 5">3.0</span></li><li><span class="stars-4" title="Global rating average: 3.0 out of 5">3.0</span></li><li><span class="stars-5" title="Global rating average: 3.0 out of 5">3.0</span></li></ul></div>
+              <b>Your rating:</b> <div class="ajaxful-rating-wrapper" id="ajaxful_rating_no-small_qualityinventory_9"><ul class="ajaxful-rating"><li class="show-value" style="width: 60.0%">Your rating: 3 out of 5</li><li><a href="/qualityinventory/9/rate?dimension=&amp;show_user_rating=true&amp;small=false&amp;stars=1" class="stars-1" data-method="post" data-remote="true" rel="nofollow" title="Rate 1 out of 5">1</a></li><li><a href="/qualityinventory/9/rate?dimension=&amp;show_user_rating=true&amp;small=false&amp;stars=2" class="stars-2" data-method="post" data-remote="true" rel="nofollow" title="Rate 2 out of 5">2</a></li><li><a href="/qualityinventory/9/rate?dimension=&amp;show_user_rating=true&amp;small=false&amp;stars=3" class="stars-3" data-method="post" data-remote="true" rel="nofollow" title="Rate 3 out of 5">3</a></li><li><a href="/qualityinventory/9/rate?dimension=&amp;show_user_rating=true&amp;small=false&amp;stars=4" class="stars-4" data-method="post" data-remote="true" rel="nofollow" title="Rate 4 out of 5">4</a></li><li><a href="/qualityinventory/9/rate?dimension=&amp;show_user_rating=true&amp;small=false&amp;stars=5" class="stars-5" data-method="post" data-remote="true" rel="nofollow" title="Rate 5 out of 5">5</a></li></ul></div> 
+            </div>
+        </div>
+       
+        <h3 class="text-center"> Comments</h3>
+          <form accept-charset="UTF-8" action="/comments/create?qi_id=9" class="new_comment" data-remote="true" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UblNLr35LcKcNsq+F6LFVvv4hFWl7lD6v5YswQuEUBg=" /></div>
+            <p>
+              <textarea class="form-control input-sm" cols="40" id="text_area" name="comment[body]" placeholder="Enter your comment" required="required" rows="3">
+</textarea>
+              <input id="comment_user_id" name="comment[user_id]" type="hidden" value="1" />
+            </p>
+            <p>
+              <input class="btn btn-primary btn-sm pull-right" name="commit" type="submit" value="Post" />
+            </p>
+            <br><br>
+</form>            <p>
+           
+
+              <div id="comments">
+
+      <table class=" table table-stripped ">
+        <p>
+          <tr> <td> 
+            <small style="font-size:13px;"> its too good </small>
+            <br> 
+                <footer class="pull-right text-muted" style="font-size:13px">
+                Posted by
+                    Site  Admin
+                    7 days ago
+                </footer>       
+           </td></tr>
+        </p>
+      </table>
+      <table class=" table table-stripped ">
+        <p>
+          <tr> <td> 
+            <small style="font-size:13px;"> this is test comment </small>
+            <br> 
+                <footer class="pull-right text-muted" style="font-size:13px">
+                Posted by
+                    Site  Admin
+                    28 days ago
+                </footer>       
+           </td></tr>
+        </p>
+      </table>
+
+</div>
+            </p>
+      </div>
+    </div>
+  </p>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Mail Gadget Inventory</h4>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" action="/qualityinventory/9/sendmail" class="form-horizontal" id="edit_qualityinventory_9" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UblNLr35LcKcNsq+F6LFVvv4hFWl7lD6v5YswQuEUBg=" /></div>
+
+        <input class="form-control" id="qualityinventory_email" name="qualityinventory[email]" placeholder="Enter email address" required="required" size="30" type="email" />
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input class="btn btn-primary" name="commit" type="submit" value="Send mail" />
+        </div> -->
+</form>      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width: 117%">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       <img alt="004_adidas_micoach" height="700" src="/system/qualityinventories/avatars/000/000/009/original/004_Adidas_micoach.jpg?1397049350" width="700" />
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+

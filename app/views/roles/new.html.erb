@@ -6,7 +6,7 @@
   <legend>Add Role </legend>
   <fieldset>
     <div class="form-horizontal">
-      <%= form_for :user, :url => {controller: 'roles', action: 'create'},:method=>'get' do |user|%>
+      <%= form_for :role, :url => {controller: 'roles', action: 'create'},:method=>'post' do |user|%>
     <div style="margin:0;padding:0;display:inline">
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="Vi+hJLZZa4S/8G9Ouqc2TLlg5VcIJ/KTHf90N0EfMOk=" />

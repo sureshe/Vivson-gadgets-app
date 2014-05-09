@@ -10,18 +10,18 @@ class GadgetsController < ApplicationController
 	end
 
 	def create
-		
 		@gadget = Gadget.new(title: params[:gadget][:title],
-      method_or_gadget: params[:gadget][:method_or_gadget],
-       useful_for: params[:gadget][:useful_for],
-        analysis_group: params[:gadget][:analysis_group], 
-        gadget_description: params[:gadget][:gadget_description], 
-        cost: params[:gadget][:cost], 
-        company_name: params[:gadget][:company_name], 
-        company_description: params[:gadget][:company_description], 
-        company_website: params[:gadget][:company_website], 
-        technology_used: params[:gadget][:technology_used], 
-        scientific_description: params[:gadget][:scientific_description], field_1_explanation: params[:gadget][:field_1_explanation], field_2_useful_for_which: params[:gadget][:field_2_useful_for_which], field_2_explanation: params[:gadget][:field_2_explanation], name: params[:gadget][:name], comment: params[:gadget][:comment])
+    method_or_gadget: params[:gadget][:method_or_gadget],
+    useful_for: params[:gadget][:useful_for],
+    analysis_group: params[:gadget][:analysis_group], 
+    gadget_description: params[:gadget][:gadget_description], 
+    cost: params[:gadget][:cost], 
+    company_name: params[:gadget][:company_name], 
+    company_description: params[:gadget][:company_description], 
+    company_website: params[:gadget][:company_website], 
+    technology_used: params[:gadget][:technology_used], 
+    scientific_description: params[:gadget][:scientific_description], field_1_explanation: params[:gadget][:field_1_explanation], field_2_useful_for_which: params[:gadget][:field_2_useful_for_which], field_2_explanation: params[:gadget][:field_2_explanation], name: params[:gadget][:name], comment: params[:gadget][:comment])
+    
     if @gadget.save
       flash[:notice] =  'User successfully created.' 
       redirect_to gadgets_path
@@ -32,31 +32,41 @@ class GadgetsController < ApplicationController
 	end
 
 	def edit
-     @gadget = Gadget.find(params[:id])
-    if !@gadget.nil?
-      render 'edit'
-    else
-      render 'index'
-    end
+    @gadget = Gadget.find(params[:id])
+      if !@gadget.nil?
+        render 'edit'
+      else
+        render 'index'
+      end
   end
 
 	def update
     @gadget = Gadget.find(params[:id])
-    if @gadget.update_attributes(params.require(:gadget).permit(:title, :method_or_gadget, :useful_for, :gadget_description, :cost, :company_name, :company_description, :company_website))
-      flash[:notice] = 'Form successfully updated'
-      redirect_to gadget_path(@gadget)
+
+    @gadget.title = params[:gadget][:title]
+    @gadget.company_name = params[:gadget][:company_name]
+    @gadget.method_or_gadget = params[:gadget][:method_or_gadget]
+    @gadget.useful_for = params[:gadget][:useful_for]
+    @gadget.gadget_description = params[:gadget][:gadget_description]
+    @gadget.cost = params[:gadget][:cost]
+    @gadget.company_description = params[:gadget][:company_description]
+    @gadget.company_website = params[:gadget][:company_website]
+    
+    if @gadget.save
+      redirect_to gadgets_path
     else
-      flash[:notice] = 'Form could not be updated'
-      @gadget.errors.full_messages
       render 'edit'
     end
   end
 
-	def delete
-		
+	def show
+		@show_gadget = Gadget.find(params[:id])
 	end
 
-	def show
-		
-	end
+  def destroy
+    Gadget.find(params[:id]).destroy
+    # redirect_to gadgets_path
+    render 'gadgets_path'
+  end
+
 end
