@@ -1,0 +1,24 @@
+<fieldset>
+  <div class="form-horizontal">
+    <%= form_for :role, url: @url, method: @method do |user|%>
+      <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input name="authenticity_token" type="hidden" value="Vi+hJLZZa4S/8G9Ouqc2TLlg5VcIJ/KTHf90N0EfMOk=" />
+      </div>
+        
+      <div class="form-group row">
+        <%= user.label :Name, class: "string optional control-label control-label col-md-2 col-lg-2" %>
+          <div class="col-md-4 col-lg-4">
+            <%= user.text_field :role_name, class: "form-control" %>
+          </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-8">
+          <%= user.submit "Submit", class: "btn btn-primary", style: "margin-left: 0%"%>
+          <%= link_to 'Back', roles_path, :method => 'get', :class => "btn btn-default" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</fieldset>

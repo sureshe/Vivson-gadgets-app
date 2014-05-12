@@ -5,6 +5,7 @@ class CreateGadgets < ActiveRecord::Migration
         t.string :method_or_gadget
         t.string :useful_for
         t.string :analysis_group
+        t.string :type_of_method_or_gadget
         t.text :gadget_description
         t.decimal :cost
         t.string :company_name

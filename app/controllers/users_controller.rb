@@ -7,13 +7,11 @@ class UsersController < ApplicationController
 
 	def create
 		@new = User.new
-
 		@new.first_name = params[:user][:first_name]
 		@new.last_name = params[:user][:last_name]
 		@new.institution = params[:user][:institution]
 		@new.email = params[:user][:email]
 		@new.password = params[:user][:password]
-		#@new.role = params[:role]
 		
 		if
 			@new.save
@@ -41,7 +39,6 @@ class UsersController < ApplicationController
 			flash[:notice] = "Entered Email-Id/Password is Invalid"
 			redirect_to sign_in_users_path
 		else
-			#redirect_to :action => 'loggedin'
 			redirect_to users_admin_index_path
 		end
 	end

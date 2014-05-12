@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+ Analysysgroup.create(name: 'Urin') if Analysysgroup.where(name: 'Urin').first.nil?
+ Analysysgroup.create(name: 'Blood') if Analysysgroup.where(name: 'Blood').first.nil?
+ Analysysgroup.create(name: 'Skin') if Analysysgroup.where(name: 'Skin').first.nil?
+ Analysysgroup.create(name: 'Faeces') if Analysysgroup.where(name: 'Faeces').first.nil?
+ Analysysgroup.create(name: 'Food intake') if Analysysgroup.where(name: 'Food intake').first.nil?
+ Analysysgroup.create(name: 'Breath') if Analysysgroup.where(name: 'Breath').first.nil?
+ Analysysgroup.create(name: 'Activity') if Analysysgroup.where(name: 'Activity').first.nil?
+ Analysysgroup.create(name: 'Sleep') if Analysysgroup.where(name: 'Sleep').first.nil?
+ Analysysgroup.create(name: 'Others') if Analysysgroup.where(name: 'Others').first.nil?
+
+
+ Typeofmethod.create(name: 'Non-invasive') if Typeofmethod.where(name: 'Non-invasive').first.nil?
+ Typeofmethod.create(name: 'Minimally-invasive') if Typeofmethod.where(name: 'Minimally-invasive').first.nil?
+ Typeofmethod.create(name: 'Invasive') if Typeofmethod.where(name: 'Invasive').first.nil?

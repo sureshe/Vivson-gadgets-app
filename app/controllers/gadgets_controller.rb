@@ -1,16 +1,17 @@
 class GadgetsController < ApplicationController
-	protect_from_forgery
-	
-	def index
-			@gadgets = Gadget.all
-	end
-	
-	def new
-		@gadget = Gadget.new
-	end
+  protect_from_forgery
+  
+  def index
+      @gadgets = Gadget.all
+  end
+  
+  def new
+    @gadget = Gadget.new
+  end
 
-	def create
-		@gadget = Gadget.new(title: params[:gadget][:title],
+  def create
+
+    @gadget = Gadget.new(title: params[:gadget][:title],
     method_or_gadget: params[:gadget][:method_or_gadget],
     useful_for: params[:gadget][:useful_for],
     analysis_group: params[:gadget][:analysis_group], 
@@ -22,16 +23,26 @@ class GadgetsController < ApplicationController
     technology_used: params[:gadget][:technology_used], 
     scientific_description: params[:gadget][:scientific_description], field_1_explanation: params[:gadget][:field_1_explanation], field_2_useful_for_which: params[:gadget][:field_2_useful_for_which], field_2_explanation: params[:gadget][:field_2_explanation], name: params[:gadget][:name], comment: params[:gadget][:comment])
     
+    analysys_array = params[:gadget][:analysis_group]
+
+    if !analysys_array.nil?   
+        analysys_array.each do |group| 
+          @gadget.analysysgroups <<  
+            Analysysgroup.find(group.to_i)
+        end
+    end
+
+
     if @gadget.save
-      flash[:notice] =  'User successfully created.' 
+      flash[:notice] =  'Gadget successfully created.' 
       redirect_to gadgets_path
     else
-      flash[:error] =  'Problem creating user.' 
+      flash[:error] =  'Problem creating Gadget.' 
       render 'new'
     end
-	end
+  end
 
-	def edit
+  def edit
     @gadget = Gadget.find(params[:id])
       if !@gadget.nil?
         render 'edit'
@@ -40,7 +51,7 @@ class GadgetsController < ApplicationController
       end
   end
 
-	def update
+  def update
     @gadget = Gadget.find(params[:id])
 
     @gadget.title = params[:gadget][:title]
@@ -59,14 +70,14 @@ class GadgetsController < ApplicationController
     end
   end
 
-	def show
-		@show_gadget = Gadget.find(params[:id])
-	end
+  def show
+    @show_gadget = Gadget.find(params[:id])
+  end
 
   def destroy
     Gadget.find(params[:id]).destroy
-    # redirect_to gadgets_path
-    render 'gadgets_path'
+    # render 'gadgets_path'
+    redirect_to gadgets_path
   end
 
 end

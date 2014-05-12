@@ -11,21 +11,17 @@ class UsersAdminController < ApplicationController
 	end
 
 	def create
-		#render :text => params.inspect and return
 		@new = User.new
-
 		@new.first_name = params[:user][:first_name]
 		@new.last_name = params[:user][:last_name]
 		@new.institution = params[:user][:institution]
 		@new.email = params[:user][:email]
 		@new.password = params[:user][:password]
-		#@new.role = params[:role]
 		
 		if @new.save
 			redirect_to users_admin_index_path
 		else
 			render 'new'
-			#flash[:notice] = "You are signed up successfully"
 		end
 	end
 

@@ -7,7 +7,6 @@ class RolesController < ApplicationController
 
 	def create
 		@new = Role.new
-
 		@new.role_name = params[:role][:role_name]
 		if
 			@new.save
@@ -30,7 +29,6 @@ class RolesController < ApplicationController
 
 	def update
 		@role = Role.find(params[:id])
-
 		@role.role_name = params[:role][:role_name]
 		if
 			@role.save
@@ -42,5 +40,4 @@ class RolesController < ApplicationController
 			Role.find(params[:id]).destroy()
 			redirect_to roles_path
 	end
-	
 end

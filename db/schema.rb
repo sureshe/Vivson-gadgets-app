@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505115017) do
+ActiveRecord::Schema.define(version: 20140512131810) do
+
+  create_table "analysysgroups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "analysysgroups_gadgets", force: true do |t|
+    t.integer "analysysgroup_id"
+    t.integer "gadget_id"
+  end
 
   create_table "gadgets", force: true do |t|
     t.string   "title"
     t.string   "method_or_gadget"
     t.string   "useful_for"
     t.string   "analysis_group"
+    t.string   "type_of_method_or_gadget"
     t.text     "gadget_description"
     t.decimal  "cost",                     precision: 10, scale: 0
     t.string   "company_name"
@@ -37,6 +49,12 @@ ActiveRecord::Schema.define(version: 20140505115017) do
   create_table "roles", force: true do |t|
     t.string   "role_name"
     t.string   "new_role_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "typeofmethods", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

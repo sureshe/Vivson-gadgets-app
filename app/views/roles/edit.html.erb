@@ -1,36 +1,14 @@
 <div class="container-fluid">
-<div class="row">
-<div class="col-md-10">
-<div class="col-md-9">
-  <legend>Edit User Role </legend>
-    <fieldset>
-      <div class="form-horizontal">
-        <%= form_for :role, :url => {controller: 'roles', action: 'update', id: @role.id}, :method=>'patch' do |user|%> 
-      <div style="margin:0;padding:0;display:inline">
-        <input name="utf8" type="hidden" value="&#x2713;" />
-        <input name="_method" type="hidden" value="put" />
-        <input name="authenticity_token" type="hidden" value="WF7bHwflbLBpGfsHA/VcW+8zugKC4kTvIGyI2bPvzpE=" />
-      </div>
-              
-      <div class="form-group row">
-        <%= user.label :Name, class: "col-md-2 control-label" %>
-          <div class="col-md-4 col-lg-4">
-        <%= user.text_field :role_name, class: "form-control" %>
-          </div>
-      </div>
-    </div> 
-  
-    <div class="form-group">
-      <div class="col-md-offset-2 col-md-8">
-        <%= user.submit "Update", class: "btn btn-primary", style: "margin-left: 0%"%>
-        <%= link_to 'Back', roles_path, :method => 'get', :class => "btn btn-default" %>
+  <div class="row">
+    <div class="col-md-10">
+      <div class="col-md-9">
+        <legend>Edit User Role </legend>
+          <% @url = {controller: 'roles', action: 'update', id: @role.id} %>
+          <% @method = 'put'%>
+          <%= notice %>
+          <%= render 'form' %>
       </div>
     </div>
-    <% end %>
-    </div>
-    </fieldset>
-</div>
-</div>
-</div>
+  </div>
 </div>
 

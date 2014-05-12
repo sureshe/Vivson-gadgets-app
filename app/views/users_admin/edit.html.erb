@@ -1,78 +1,11 @@
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-10">
-<div class="row">
-<div class="col-md-9">
-  <div class="container">
-    <div class="row"> 
-      <div class="col-lg-10 ">
-        <%= form_for :user, :url => {controller: 'users_admin', action: 'update', id: @user.id}, :method=>'patch' do |user|%> 
-          <div style="margin:0;padding:0;display:inline">
-            <input name="utf8" type="hidden" value="&#x2713;" />
-            <input name="authenticity_token" type="hidden" value="B1TuNwFttqwyi00Yz/h3t746UZXcJIeDlasaf2pnE4o=" />
-          </div>
-              <h1>Edit Your Details Here </h1>
-          <legend>
-            <h4>To get access to this inventory list of gadgets please fill out the following form. Thank you </h4>
-          </legend>
-       
-          <div class="form-group row">
-            <%= user.label :FirstName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-            <%= user.text_field :first_name, class: "form-control" %>
-              </div>
-          </div>
-
-          <div class="form-group row">
-            <%= user.label :LastName, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-            <%= user.text_field :last_name, class: "form-control" %>
-              </div>
-          </div>
-
-          <div class="form-group row">
-            <%= user.label :Institution, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-            <%= user.text_field :institution, class: "form-control" %>
-              </div>
-          </div>
-
-          <div class="form-group row">
-            <%= user.label :Email, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-            <%= user.text_field :email, class: "form-control" %>
-              </div>
-          </div>
-
-          <div class="form-group row">
-            <%= user.label :Password, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-            <%= user.password_field :password, class: "form-control" %>
-              </div>
-          </div>
-
-          <% @roles = Role.all%>
-          <div class="form-group row">
-            <%= user.label :Role, class: "string optional control-label control-label col-md-2 col-lg-2" %>
-              <div class="col-md-4 col-lg-4">
-                <select class="form-control" name="user[role_name]">
-                  <%= @roles.each do |r|%>
-                    <option value="<%= r.role_name%>"><%= r.role_name%>
-                    </option>
-                  <% end %>
-                </select>
-              </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2" style="padding-top:20px;">
-              <%= user.submit "Update", class: "btn btn-primary", style: "margin-left: 1%"%>
-              <%= link_to 'Back', users_admin_index_path, :method => 'get', :class => "btn btn-default"%>
-            </div>
-          </div>
-        <% end %> 
-      </div>
+<div class="container">
+  <div class="row"> 
+    <div class="col-lg-10 ">
+      <% @url = {controller: 'users_admin', action: 'update', id: @user.id} %>
+      <% @method = 'put'%>
+      <%= notice %>
+      <%= render 'form' %>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
+
