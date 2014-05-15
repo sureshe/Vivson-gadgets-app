@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title> List Of Users </title>
-</head>
-
-<body>
-
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="nav navbar-header">
-    <a href="/admins/contact" class="navbar-brand">Contact</a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">German</a></li>
-        </ul>
-      </li>
-    </ul>
-      
-    <ul class="nav navbar-nav pull-right">
-      <li><a href="/admins/signin" data-method="delete" rel="nofollow">Sign Out</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav> <br><br><br>
-
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2 sidebar-padding">
-			<div class="list-group">
-            <a href="/admins/index" class="list-group-item">Current Users</a>
-            <a href="/roles/new" class="user/user_Roles">User Roles</a>
-            <a href="/gadgets/new" class="user/gadget_Inventory">Gadget inventory</a>
-      </div>
-    </div>
-					
-    <div class="col-md-10">
+		
+		<div class="col-md-10">
 			<div class="row">
 	     <div class="col-md-9" id="padding">
 		    <div class="row">
@@ -44,7 +9,7 @@
             <p class="lead"> Listing users </p>
           </div>
           <div class="col-md-2">
-            <a href="/admins/new" class="btn btn-primary">Add User</a>
+        <%= link_to 'Add User', new_user_path,:class => 'btn btn-primary' %>
           </div>
         </div>
         
@@ -68,9 +33,12 @@
               <td><%= allusers.institution%></td>
               <td><%= allusers.role%></td>
                 
-              <td><a href="/admins/39">Show</a></td>
-              <td><a href="/admins/39/edit">Edit</a></td>
-              <td><a href="/admins/delete/<%=allusers.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+              <!-- <td><a href="/admins/39">Show</a></td> -->
+              <td><%= link_to 'Show', user_path,:class => 'btn btn-primary' %></td>
+              <!-- <td><a href="/admins/39/edit">Edit</a></td> -->
+              <td><%= link_to 'Edit', edit_user_path,:class => 'btn btn-primary' %></td>
+              <!-- <td><a href="/admins/delete/<%=allusers.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td> -->
+              <td><%= link_to 'Destroy', edit_user_path,:class => 'btn btn-primary' %></td>
             </tr>
             <% end %>
           <% end %>
@@ -82,5 +50,4 @@
     </div>
   </div>
 </div>
-</body>
-</html>
+

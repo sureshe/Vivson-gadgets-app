@@ -10,10 +10,6 @@ class GadgetsController < ApplicationController
   end
 
   def create
-
-
-
-
     @gadget = Gadget.new(title: params[:gadget][:title],
     method_or_gadget: params[:gadget][:method_or_gadget],
     useful_for: params[:gadget][:useful_for],
@@ -27,17 +23,11 @@ class GadgetsController < ApplicationController
     scientific_description: params[:gadget][:scientific_description], field_1_explanation: params[:gadget][:field_1_explanation], field_2_useful_for_which: params[:gadget][:field_2_useful_for_which], field_2_explanation: params[:gadget][:field_2_explanation], name: params[:gadget][:name], comment: params[:gadget][:comment])
     
     analysys_array = params[:gadget][:analysis_group]
-
       if !analysys_array.nil?   
-
-
-    if !analysys_array.nil?   
-
         analysys_array.each do |group| 
           @gadget.analysysgroups <<  
             Analysysgroup.find(group.to_i)
         end
-
       end
 
     type_of_method_array = params[:gadget][:type_of_method_or_gadget]
@@ -53,10 +43,6 @@ class GadgetsController < ApplicationController
           @gadget.qualifyareasofinterests <<  Qualifyareasofinterest.find(group.to_i)
         end
       end
-
-    end
-
-
 
     if @gadget.save
       flash[:notice] =  'Gadget successfully created.' 
@@ -78,7 +64,6 @@ class GadgetsController < ApplicationController
 
   def update
     @gadget = Gadget.find(params[:id])
-
     @gadget.title = params[:gadget][:title]
     @gadget.company_name = params[:gadget][:company_name]
     @gadget.method_or_gadget = params[:gadget][:method_or_gadget]
@@ -105,7 +90,6 @@ class GadgetsController < ApplicationController
     redirect_to gadgets_path
   end
 
-
   def generatereport
     @gadget_report = Gadget.find(params[:id])
       respond_to do |format|
@@ -118,15 +102,4 @@ class GadgetsController < ApplicationController
         end
       end
   end
-
-  def sendmail
-    @qi = Gadget.find(params[:id])
-    if UserMailer.send_qi_by_email(@qi, params[:Gadget][:email]).deliver
-      flash[:notice] = 'Mail successfully sent to '+ params[:Gadget][:email]
-    else
-      flash[:notice] = 'Problem sending mail'
-    end
-    redirect_to gadgets_path
-  end
-
 end

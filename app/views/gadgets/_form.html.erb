@@ -35,67 +35,49 @@
       </div><br>
 
       <div class="row">
-        <div class="form-group">
-          <label class="col-md-4 control-label">Analysis group(s)</label>
-            <div class="col-md-7" style="padding-top:13px">
+      <div class="form-group">
+      <label class="col-md-4 control-label">Analysis group(s)</label>
+        <div class="col-md-7" style="padding-top:13px">
               
-              <% Analysysgroup.all.each do |a_value| %> 
-              <% if @gadget.new_record? %>
-                  <%= f.check_box(:analysis_group, { :multiple => true }, a_value.id, nil) %>
-                <%=  a_value.name %>  
-                <% else %>
+          <% Analysysgroup.all.each do |a_value| %> 
+            <% if @gadget.new_record? %>
+              <%= f.check_box(:analysis_group, { :multiple => true }, a_value.id, nil) %>
+              <%=  a_value.name %>  
+            <% else %>
                   
-                <% if @gadget.analysis_group.pluck(:id).include?(a_value.id)  %>
+              <% if @gadget.analysis_group.pluck(:id).include?(a_value.id)  %>
                 <%= f.check_box(:analysis_group, { :multiple => true, checked:  true}, a_value.id, nil) %>
-                  <%=  a_value.name %>  
+                <%=  a_value.name %>  
                   
-                <% else %>
+              <% else %>
                 <%= f.check_box(:analysis_group, { :multiple => true }, a_value.id, nil) %>
-                  <%=  a_value.name %>  
-                <% end %> 
-                <% end %>
-                <% end %>
-            </div>
+                <%=  a_value.name %>  
+              <% end %> 
+            <% end %>
+          <% end %>
         </div>
+      </div>
       </div><br>
 
       <div class="row">
         <div class="form-group">
           <label class="col-md-4 control-label">Type of method/gadget</label>
             <div class="col-md-7" style="padding-top:13px">
-<<<<<<< HEAD
               <% Typeofmethod.all.each do |a_value| %> 
                 <% if @gadget.new_record? %>
                   <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
                   <%=  a_value.name %>  
                 <% else %>
-                  <% if @gadget.type_of_method_or_gadget.pluck(:id).include?(a_value.id)   %>
+                  <% if @gadget.typeofmethods.pluck(:id).include?(a_value.id)   %>
                     <%= f.check_box(:type_of_method_or_gadget, { :multiple => true, checked:  true}, a_value.id, nil) %>
                     <%=  a_value.name %>  
                   <% else %>
                     <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
-                    <%=  a_value.name %>  
+                        <%=  a_value.name %>  
                   <% end %> 
                 <% end %>
               <% end %>
             </div>
-=======
-                <% Typeofmethod.all.each do |a_value| %> 
-                      <% if @gadget.new_record? %>
-                        <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
-                        <%=  a_value.name %>  
-                      <% else %>
-                      <% if @gadget.typeofmethods.pluck(:id).include?(a_value.id)   %>
-                        <%= f.check_box(:type_of_method_or_gadget, { :multiple => true, checked:  true}, a_value.id, nil) %>
-                        <%=  a_value.name %>  
-                        <% else %>
-                          <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
-                        <%=  a_value.name %>  
-                      <% end %> 
-                    <% end %>
-                <% end %>
-              </div>
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
         </div>
       </div><br>
         
@@ -114,7 +96,7 @@
             <div class="col-md-5">
               <%= f.text_field :cost, class: 'form-control' %>
             </div>
-<<<<<<< HEAD
+
             <div class="col-md-3">
               <%= f.select :CurrencyID, Currency.all.collect {|p| [ p.name, p.id] },{:default => 'Guest'}, {:class => 'form-control', id: 'currency_select'} %>
             </div>  
@@ -155,10 +137,6 @@
         </div>
       </div>
       <br><hr/>
-=======
-        </div>
-      </div><br><hr/>
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
 
       <div class="row">
         <div class="form-group">
@@ -204,7 +182,7 @@
             </div>
         </div>
       </div><br>
-<<<<<<< HEAD
+
 
       <div class="row">
         <div class="form-group">
@@ -227,9 +205,7 @@
             </div>
         </div>
       </div><br>
-=======
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
-        
+
       <div class="row">
         <div class="form-group">
           <label class="col-md-4 control-label">Explanation by evaluator(NRC)</label>
@@ -256,13 +232,9 @@
               <%= f.text_area :comment, class: 'form-control input-md', rows: 4, id: 'fieldwidth' %>
             </div>
         </div>  
-<<<<<<< HEAD
       </div><br>
-=======
-      </div> <br>
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
-        
-      <div class="text-center"> 
+
+     <div class="text-center"> 
         <%= link_to "Back", gadgets_path, class: 'btn btn-primary' %>
         <%= f.submit "Save", class: 'btn btn-primary' %>
       </div>

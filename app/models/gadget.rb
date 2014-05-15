@@ -1,7 +1,6 @@
 class Gadget < ActiveRecord::Base
 	attr_accessible :title, :method_or_gadget,:useful_for,:analysis_group,
 	:gadget_description,:cost,:company_name,:company_description,:company_website,
-<<<<<<< HEAD
 	:technology_used,:scientific_description,:CurrencyID,:field_1_explanation,
 	:field_2_useful_for_which,:field_2_explanation,:name,:comment,
 	:type_of_method_or_gadget,:evaluation_by_nrc,:evaluation_by_evaluator,:gadgetwebsite,
@@ -15,11 +14,5 @@ class Gadget < ActiveRecord::Base
 	has_and_belongs_to_many :qualifyareasofinterests
 	
 	belongs_to :currency
-=======
-	:technology_used,:scientific_description,:field_1_explanation,:field_2_useful_for_which,
-	:field_2_explanation,:name,:comment
-	
-	has_and_belongs_to_many :analysysgroups
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
 end
 

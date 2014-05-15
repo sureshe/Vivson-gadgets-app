@@ -12,17 +12,14 @@ resources :users do
 end
 
 resources :roles
-<<<<<<< HEAD
-
 resources :gadgets do
   member do
     get 'generatereport'
     post 'sendmail'
   end
 end
-=======
+
 resources :gadgets
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
 
 resources :users_admin do
   collection do
@@ -41,8 +38,6 @@ end
 # get 'admins/index'
 # get 'admins/contact'
 # delete 'admins/signin'
-
-
 # get 'roles/create'
 # get 'roles/new'
 # post 'roles/create'

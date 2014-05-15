@@ -5,21 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 gem 'therubyracer'
 gem 'therubyrhino'
-<<<<<<< HEAD
-gem 'less-rails','~> 2.5.0'
-gem 'less-rails-bootstrap', '~> 3.1.1.1'
-gem 'less-rails-bootswatch'
 gem 'better_errors', '>= 1.1.0'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 gem "email_spec", ">= 1.4.0", :group => :test”
-=======
-gem 'less-rails-bootstrap'
-gem 'less-rails'
-gem 'less-rails-bootswatch'
-gem 'better_errors', '>= 1.1.0'
->>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
-
+gem 'less-rails-bootswatch', '~> 0.3.4'
+gem  'less-rails-bootstrap', '~> 2.1.0'
+gem 'less-rails','~> 2.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
