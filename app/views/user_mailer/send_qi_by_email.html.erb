@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+		<div class="well">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-12">
+						<%= @show_gadget.title %>
+		    		</div>
+				</div> <!-- row end -->
+			<hr width="100%" align="left">
+
+				<div class="row">
+				   <div class="col-md-8">
+
+					<% if !@show_gadget.method_or_gadget.blank?%>
+					<div class="row">
+						<div class="form-group">
+				  		<label class="col-md-4 control-label">Name of the Method / Gadget</label>  
+							<div class="col-md-7">
+								<%= @show_gadget.method_or_gadget %>
+							</div>
+						</div>
+					</div><!-- row end -->
+					<br>
+					 <% end %>
+					<% if !@show_gadget.useful_for.blank?%>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-md-4 control-label">What it is for?</label>  
+							<div class="col-md-7">
+								<%= @show_gadget.useful_for %>
+							</div>
+						</div>
+					</div><!-- row end -->
+					<br>
+					 <% end %>
+					<% if !@show_gadget.analysysgroups.empty?%>
+					<div class="row">
+						<div class="form-group">
+	  					<label class="col-md-4 control-label">Analysis Group</label>
+	  						<div class="col-md-7">
+	    						<%= @show_gadget.analysysgroups %>
+	  						</div>
+						</div>
+					</div><!-- row end -->
+					<br>
+					 <% end %>
+				</div>  
+		</div>		
+	</div>
+	</body>
+</html>

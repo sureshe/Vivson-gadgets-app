@@ -1,0 +1,244 @@
+<%= form_for :gadget, url: @url, method: @method do |f|%>     
+<div class="container">
+  <div class="col-lg-10">
+    
+    <div class="row">
+      <div class="form-group">      
+        <div class="col-md-9">
+          <%= f.text_field :title, required: true, class: 'form-control input-md', placeholder: 'Enter Title Here' %>
+        </div>
+        
+        <div class="col-md-3"> 
+          <%= link_to "Back", gadgets_path, class: 'btn btn-primary' %>
+          <%= f.submit "Save", class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div><hr/>
+      
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Name of the method/gadget</label>  
+            <div class="col-md-7">
+              <%= f.text_field :method_or_gadget, required: true, class: 'form-control input-md' %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">What is it for?</label>  
+            <div class="col-md-7">
+              <%= f.text_field :useful_for, class: 'form-control input-md' %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Analysis group(s)</label>
+            <div class="col-md-7" style="padding-top:13px">
+              
+              <% Analysysgroup.all.each do |a_value| %> 
+              <% if @gadget.new_record? %>
+                  <%= f.check_box(:analysis_group, { :multiple => true }, a_value.id, nil) %>
+                <%=  a_value.name %>  
+                <% else %>
+                  
+                <% if @gadget.analysis_group.pluck(:id).include?(a_value.id)  %>
+                <%= f.check_box(:analysis_group, { :multiple => true, checked:  true}, a_value.id, nil) %>
+                  <%=  a_value.name %>  
+                  
+                <% else %>
+                <%= f.check_box(:analysis_group, { :multiple => true }, a_value.id, nil) %>
+                  <%=  a_value.name %>  
+                <% end %> 
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Type of method/gadget</label>
+            <div class="col-md-7" style="padding-top:13px">
+              <% Typeofmethod.all.each do |a_value| %> 
+                <% if @gadget.new_record? %>
+                  <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
+                  <%=  a_value.name %>  
+                <% else %>
+                  <% if @gadget.type_of_method_or_gadget.pluck(:id).include?(a_value.id)   %>
+                    <%= f.check_box(:type_of_method_or_gadget, { :multiple => true, checked:  true}, a_value.id, nil) %>
+                    <%=  a_value.name %>  
+                  <% else %>
+                    <%= f.check_box(:type_of_method_or_gadget, { :multiple => true }, a_value.id, nil) %>
+                    <%=  a_value.name %>  
+                  <% end %> 
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div><br>
+        
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Gadget Description</label>
+            <div class="col-md-7"> 
+              <%= f.text_area :gadget_description, class: 'form-control', rows: 4 %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="buttondropdown">Cost</label>
+            <div class="col-md-5">
+              <%= f.text_field :cost, class: 'form-control' %>
+            </div>
+            <div class="col-md-3">
+              <%= f.select :CurrencyID, Currency.all.collect {|p| [ p.name, p.id] },{:default => 'Guest'}, {:class => 'form-control', id: 'currency_select'} %>
+            </div>  
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="radios">Is the tool available to users?</label>
+            <div class="col-md-8"> 
+              <label class="radio-inline" for="radios-0">
+                <%= f.radio_button :tooltousers, "Yes" %>
+              Yes
+              </label> 
+              <label class="radio-inline" for="radios-1">
+                <%= f.radio_button :tooltousers, "No" %>
+                No
+              </label> 
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Gadget website</label>
+          <div class="col-md-7"> 
+            <%= f.text_field :gadgetwebsite, class: 'form-control'%>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="">Brochure</label>
+          <div class="col-md-7"> 
+            <%= f.text_field :brochure, class: 'form-control'%>
+          </div>
+        </div>
+      </div>
+      <br><hr/>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Company name</label>  
+            <div class="col-md-7">
+              <%= f.text_field :company_name, class: 'form-control input-md' %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Company description</label>  
+            <div class="col-md-7">
+              <%= f.text_area :company_description, class: 'form-control input-md', rows:4 %>
+            </div>
+        </div>
+      </div><br>
+        
+      <div class="row">     
+        <div class="form-group">
+          <label class="col-md-4 control-label">Company website</label>  
+            <div class="col-md-7">
+              <%= f.text_field :company_website, class: 'form-control input-md' %>
+            </div>
+        </div>
+      </div><br>
+        
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Technology used</label>  
+            <div class="col-md-7">
+              <%= f.text_field :technology_used, class: 'form-control input-md' %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Scientific description of</label>  
+            <div class="col-md-7">
+              <%= f.text_area :scientific_description, class: 'form-control input-md', rows: 4 %>
+            </div>
+        </div>
+      </div><br>
+
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">QuaLiFY area of interest</label>
+            <div class="col-md-7" style="padding-top:13px">
+              <% Qualifyareasofinterest.all.each do |a_value| %> 
+                <% if @gadget.new_record? %>
+                  <%= f.check_box(:qualifyareasofinterest, { :multiple => true }, a_value.id, nil) %>
+                  <%=  a_value.name %>  
+                  <% else %>
+                    <% if @qi.qualifyareasofinterests.pluck(:id).include?(a_value.id)   %>
+                      <%= f.check_box(:qualifyareasofinterest, { :multiple => true, checked:  true}, a_value.id, nil) %>
+                      <%=  a_value.name %>  
+                    <% else %>
+                      <%= f.check_box(:qualifyareasofinterest, { :multiple => true }, a_value.id, nil) %>
+                      <%=  a_value.name %>  
+                  <% end %> 
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div><br>
+        
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Explanation by evaluator(NRC)</label>
+            <div class="col-md-7"> 
+              <%= f.text_area :field_2_explanation, class: 'form-control input-md', rows: 4 %>
+            </div>
+        </div>
+      </div><br><hr/>
+        
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Name of evaluator(NRC)</label>  
+            <div class="col-md-7">
+              <%= f.text_field :name, class: 'form-control input-md',
+                   id: 'fieldwidth' %>
+            </div>
+        </div>
+      </div><br>
+        
+      <div class="row">
+        <div class="form-group">
+          <label class="col-md-4 control-label">Comments/suggestion of evaluator</label>  
+            <div class="col-md-7">
+              <%= f.text_area :comment, class: 'form-control input-md', rows: 4, id: 'fieldwidth' %>
+            </div>
+        </div>  
+      </div><br>
+        
+      <div class="text-center"> 
+        <%= link_to "Back", gadgets_path, class: 'btn btn-primary' %>
+        <%= f.submit "Save", class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div> 
+</div>
+  <!-- insert code for avatars here -->
+  <!-- insert code for video location here -->
+<% end %>

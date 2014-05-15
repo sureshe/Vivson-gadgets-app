@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-10" id="padding">
+          <div class="col-md-10">
+            <p class="lead"> Gadget inventory</p> 
+            <div class="row">
+              <div class="col-lg=12 col-md=12">
+                <%= form_for :gadget, :url => gadgets_path , :method => 'get' do %>
+                <!-- <form accept-charset="UTF-8" action="/qualityinventory" class="qualityinventory_search" id="qualityinventory_search" method="get"> -->
+                  <div style="margin:0;padding:0;display:inline">
+                    <input name="utf8" type="hidden" value="&#x2713;" /></div>
+                      <div class="field">
+                        <label for="q_methodorgadget_cont">Search By: Gadget</label></br>
+                        <input id="q_methodorgadget_cont" name="q[methodorgadget_cont]" size="30" type="text" />
+                      </div></br>
+                        <input class="btn btn-primary" name="commit" type="submit" value="Search" /> 
+                      <% end %>      
+                    </div></br>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <a href="/gadgets/create" class="btn btn-primary">ADD GADGET</a>
+                </div>
+                
+                <table class="table table-striped table-hover">
+                <tr> 
+                    <th><a href="/?q%5Bs%5D=title+asc" class="sort_link">Gadget/App</a></th>
+                    <th><a href="/?q%5Bs%5D=methodorgadget+desc" class="sort_link asc">Name of the tool &#9650;</a></th>
+                    <th>Analysis group(s)</th>
+                    <th colspan="3" class="text-center"></th>
+                </tr>
+        
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><a href="/qualityinventory/9">Show</a></td>
+                  <td><a href="/qualityinventory/9/edit">Edit</a></td>
+                  <td><a href="/qualityinventory/9" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a></td>
+                </tr>
+              </table>
+    
+              <div  class='col-lg-offset-3'>
+                <div class="pagination">
+                  <ul class="pagination">
+                    <li class="prev previous_page disabled"><a href="#">&#8592; Previous</a></li> 
+                    <li class="active"><a rel="start" href="/?page=1">1</a></li> 
+                    <li><a rel="next" href="/?page=2">2</a></li> <li><a href="/?page=3">3</a></li> 
+                    <li><a href="/?page=4">4</a></li> 
+                    <li><a href="/?page=5">5</a></li> 
+                    <li><a href="/?page=6">6</a></li> 
+                    <li><a href="/?page=7">7</a></li> 
+                    <li><a href="/?page=8">8</a></li>
+                    <li><a href="/?page=9">9</a></li>
+                    <li><a href="/?page=10">10</a></li> 
+                    <li class="next next_page "><a rel="next" href="/?page=2">Next &#8594;</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

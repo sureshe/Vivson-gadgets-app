@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NVRProject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div class="row">
+        <%= render :partial => "navbar"%>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <%= render :partial => "sidebar"%>
+    </div>
+    <div class=" row col-md-10">
+      <div class="well">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="form-group">
+    <div class="col-md-5">
+      Gadget
+    </div>
+  
+    <div class="col-md-7">
+      <%= link_to 'Back', gadgets_path,:class => 'btn btn-primary' %> 
+      <%= link_to 'Edit', edit_gadget_path,:class => "btn btn-primary"%>
+      <%= link_to "Pdf", generatereport_gadget_path(@show_gadget.id, format: :pdf), class: 'btn btn-primary' %>
+      <button class="btn btn-primary" data-toggle="modal" data-target ="#myModal">Send mail 
+      </button>
+    </div>
+  </div>
+</div> 
+<hr/>
+
+<div class="row">
+  <div class="col-md-8">
+    <dl>
+      <dt>Name of the method/gadget</dt>
+      <dd><%= @show_gadget.method_or_gadget%></dd>
+    </dl>
+
+    <dl>
+      <dt>What is it for?</dt>
+      <dd><%= @show_gadget.useful_for%></dd>
+    </dl>
+            
+    <dl>
+      <% if !@show_gadget.analysysgroups.empty? %>
+        <dt>Analysis group(s)</dt>
+      <% @show_gadget.analysysgroups.each do |group| %>
+        <dd> <%= group.name %></dd>
+          <% end %>
+          <% end %>
+    </dl>
+
+    <dl>
+      <dt>Type of method/gadget</dt>
+      <% if !@show_gadget.typeofmethods.empty?%>
+        
+          <% @show_gadget.typeofmethods.each do |group| %>
+            <dd> <%= group.name %></dd>
+          <% end %>
+      <% end %>
+    </dl>
+            
+    <dl>
+      <dt>Gadget description</dt>
+      <dd><%= @show_gadget.gadget_description %></dd>
+    </dl>
+            
+    <dl>
+        <% if !@show_gadget.cost.nil?%>
+          <dt>Cost</dt>
+          <dd> <%= @show_gadget.cost %>&nbsp<%= @show_gadget.currency.name if !@show_gadget.currency.nil? %></dd>
+        <% end %>
+    </dl>
+
+    <dl>
+      <dt>Is the tool avaliable to users?</dt>
+      <% !if @show_gadget.tooltousers.nil?%>
+        <dd> 
+          <% if @show_gadget.tooltousers == "Yes" %> 
+
+                      Yes
+          <% else %>
+          <% if @show_gadget.tooltousers == "No" %>
+                      No
+          <% end %>
+          <% end %>
+        </dd>
+      <% end %>
+    </dl>
+
+    <dl>
+      <% if !@show_gadget.gadgetwebsite.blank?%>
+        <dt>Gadget website</dt>
+          <dd> <%= @show_gadget.gadgetwebsite %></dd>
+            <% end %>
+    </dl>
+
+    <dl>
+      <% if !@show_gadget.brochure.blank?%>
+        <dt>Brochure</dt>
+          <dd> <%= @show_gadget.brochure %></dd>
+      <% end %>
+    </dl>
+  </div>
+          
+  <div class="col-md-4">
+    <div class="row">
+      <img alt="" data-target=".bs-example-modal-lg" data-toggle="modal" src="/system/qualityinventories/avatars/000/000/009/medium/004_Adidas_micoach.jpg?1397049350" />
+    </div>
+    
+    <div class="row">
+      <iframe style="margin-top:6px;" width="177" height="160" src="//www.youtube.com/embed/REqqkL_00-4" frameborder="0" allowfullscreen>show video</iframe>
+    </div>
+  </div>
+</div><hr/>
+  
+  <dl>
+    <dt>Company name</dt>
+    <dd> <%= @show_gadget.company_name%></dd>
+  </dl>
+        
+  <dl>
+    <dt>Company description</dt>
+    <dd><%= @show_gadget.company_description%></dd>
+  </dl>
+        
+  <dl>
+    <dt>Company website</dt>
+    <dd> <%= @show_gadget.company_website%></dd>
+  </dl>
+
+  <dl>
+    <% if !@show_gadget.qualifyareasofinterests.empty? %>
+      <dt>QuaLiFY area of interest</dt>
+        <% @show_gadget.qualifyareasofinterests.each do |group| %>
+          <dd> <%= group.name %></dd>
+        <% end %>
+  </dl>
+    <% end %><hr/>
+    
+  <dl>
+    <dt>Evaluated by NRC </dt>
+    <dd><%if  @show_gadget.evaluation_by_nrc %>
+              Yes
+        <% else %>
+              No
+        <% end %>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>Name of evaluator </dt>
+      <dd></dd>
+  </dl>
+        
+  <dl>
+    <dt>Usefulness for which field lab? </dt>
+    <dd> </dd>
+  </dl>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Mail Gadget Inventory</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @show_gadget, url: {controller: 'gadgets', action: 'sendmail', id: @show_gadget.id}, method: :post, :html => {class:'form-horizontal' }  do |f| %>
+
+        <%= f.email_field :email, required: true, class: 'form-control', placeholder: 'Enter email address'  %>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.submit "Send mail", class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
