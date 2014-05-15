@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140515061402) do
+=======
+ActiveRecord::Schema.define(version: 20140512131810) do
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
 
   create_table "analysysgroups", force: true do |t|
     t.string   "name"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140515061402) do
     t.integer "gadget_id"
   end
 
+<<<<<<< HEAD
   create_table "contacts", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -38,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140515061402) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
   create_table "gadgets", force: true do |t|
     t.string   "title"
     t.string   "method_or_gadget"
@@ -58,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140515061402) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.string   "CurrencyID"
     t.boolean  "evaluation_by_evaluator",                           default: false
     t.boolean  "evaluation_by_nrc",                                 default: false
@@ -82,6 +90,8 @@ ActiveRecord::Schema.define(version: 20140515061402) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
   end
 
   create_table "roles", force: true do |t|

@@ -12,6 +12,7 @@ resources :users do
 end
 
 resources :roles
+<<<<<<< HEAD
 
 resources :gadgets do
   member do
@@ -19,6 +20,9 @@ resources :gadgets do
     post 'sendmail'
   end
 end
+=======
+resources :gadgets
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
 
 resources :users_admin do
   collection do

@@ -20,6 +20,7 @@
 
  Typeofmethod.create(name: 'Non-invasive') if Typeofmethod.where(name: 'Non-invasive').first.nil?
  Typeofmethod.create(name: 'Minimally-invasive') if Typeofmethod.where(name: 'Minimally-invasive').first.nil?
+<<<<<<< HEAD
  Typeofmethod.create(name: 'Invasive') if Typeofmethod.where(name: 'Invasive').first.nil?
 
  Currency.create(name: 'Euros') if Currency.where(name: 'Euros').first.nil?
@@ -32,3 +33,6 @@
  Qualifyareasofinterest.create(name: 'health status') if Qualifyareasofinterest.where(name: 'health status').first.nil?
  Qualifyareasofinterest.create(name: 'Physical activity') if Qualifyareasofinterest.where(name: 'Physical activity').first.nil?
  Qualifyareasofinterest.create(name: 'Fitness performance & genotype') if Qualifyareasofinterest.where(name: 'Fitness performance & genotype').first.nil?
+=======
+ Typeofmethod.create(name: 'Invasive') if Typeofmethod.where(name: 'Invasive').first.nil?
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c

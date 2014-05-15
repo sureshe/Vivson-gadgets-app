@@ -1,7 +1,11 @@
 class CreateGadgets < ActiveRecord::Migration
   def up
     create_table :gadgets do |t|
+<<<<<<< HEAD
     	t.string :title
+=======
+    	  t.string :title
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
         t.string :method_or_gadget
         t.string :useful_for
         t.string :analysis_group

@@ -7,7 +7,11 @@
     <div class="col-md-7">
       <%= link_to 'Back', gadgets_path,:class => 'btn btn-primary' %> 
       <%= link_to 'Edit', edit_gadget_path,:class => "btn btn-primary"%>
+<<<<<<< HEAD
       <%= link_to "Pdf", generatereport_gadget_path(@show_gadget.id, format: :pdf), class: 'btn btn-primary' %>
+=======
+      <!-- <a href="/qualityinventory/9/generatereport.pdf" class="btn btn-primary">Pdf</a> -->
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
       <button class="btn btn-primary" data-toggle="modal" data-target ="#myModal">Send mail 
       </button>
     </div>
@@ -36,6 +40,7 @@
           <% end %>
     </dl>
 
+<<<<<<< HEAD
     <dl>
       <dt>Type of method/gadget</dt>
       <% if !@show_gadget.typeofmethods.empty?%>
@@ -44,6 +49,21 @@
             <dd> <%= group.name %></dd>
           <% end %>
       <% end %>
+=======
+
+    <!-- <dl>
+      <dt>Type of method/gadget</dt>
+      <dd><%= @show_gadget.type_of_method_or_gadget%></dd>
+    </dl> -->
+
+    <dl>
+      <% if !@show_gadget.typeofmethods.empty? %>
+        <dt>Analysis group(s)</dt>
+      <% @show_gadget.typeofmethods.each do |group| %>
+        <dd> <%= group.name %></dd>
+          <% end %>
+          <% end %>
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
     </dl>
             
     <dl>
@@ -52,6 +72,7 @@
     </dl>
             
     <dl>
+<<<<<<< HEAD
         <% if !@show_gadget.cost.nil?%>
           <dt>Cost</dt>
           <dd> <%= @show_gadget.cost %>&nbsp<%= @show_gadget.currency.name if !@show_gadget.currency.nil? %></dd>
@@ -86,6 +107,10 @@
         <dt>Brochure</dt>
           <dd> <%= @show_gadget.brochure %></dd>
       <% end %>
+=======
+      <dt>Cost</dt>
+      <dd><%= @show_gadget.cost %></dd>
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
     </dl>
   </div>
           
@@ -98,7 +123,12 @@
       <iframe style="margin-top:6px;" width="177" height="160" src="//www.youtube.com/embed/REqqkL_00-4" frameborder="0" allowfullscreen>show video</iframe>
     </div>
   </div>
+<<<<<<< HEAD
 </div><hr/>
+=======
+</div>
+<hr/>
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
   
   <dl>
     <dt>Company name</dt>
@@ -112,6 +142,7 @@
         
   <dl>
     <dt>Company website</dt>
+<<<<<<< HEAD
     <dd> <%= @show_gadget.company_website%></dd>
   </dl>
 
@@ -137,6 +168,14 @@
   <dl>
     <dt>Name of evaluator </dt>
       <dd></dd>
+=======
+    <dd> <%= @show_gadget.company_description%></dd>
+  </dl>
+
+  <dl>
+    <dt>Evaluated by NRC </dt>
+      <dd> </dd>
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
   </dl>
         
   <dl>
@@ -145,6 +184,7 @@
   </dl>
 </div>
 
+<<<<<<< HEAD
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -167,3 +207,5 @@
   </div>
 </div>
 
+=======
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c

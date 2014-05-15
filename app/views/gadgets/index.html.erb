@@ -23,6 +23,7 @@
           <tr>
             <td><%= gadget.title %></td>
             <td><%= gadget.method_or_gadget %></td>
+<<<<<<< HEAD
             <td><% gadget.analysysgroups.each do |group| %>
                    
                   <% if group == gadget.analysysgroups.last %>
@@ -31,6 +32,10 @@
                   <%= group.name+","%>
                   <% end %>
                 <% end %>
+=======
+            <td>
+              <%= gadget.analysis_group%>
+>>>>>>> b5df81151ca55bbb045a9f17b2922e37ecce289c
             </td>
             <td>
               <%= gadget.company_name%>
